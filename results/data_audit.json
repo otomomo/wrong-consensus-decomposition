@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "data_audit.py",
+  "args": {
+    "input_cases": "data/raw/case_results_deid.parquet",
+    "input_dist": "data/raw/answer_distributions_deid.parquet",
+    "output": "results/data_audit.json"
+  },
+  "note": "Data-level facts cited in Sec. Data: plurality tie rates, release majority labels that are not the argmax of their own counts, per-axis consensus accuracies for mini-ZS, and the runs-per-case range.",
+  "tie_rates": {
+    "aime": {
+      "n_tied": 198,
+      "n_runs": 2650,
+      "rate": 0.07471698113207548
+    },
+    "gpqa_diamond": {
+      "n_tied": 22,
+      "n_runs": 2650,
+      "rate": 0.00830188679245283
+    }
+  },
+  "majority_not_argmax_count": 30,
+  "total_runs": 5300,
+  "axis_consensus_acc": {
+    "aime|A/b": {
+      "n_runs": 450,
+      "n_cases": 178,
+      "consensus_acc": 0.32222222222222224
+    },
+    "aime|B/a": {
+      "n_runs": 425,
+      "n_cases": 172,
+      "consensus_acc": 0.3623529411764706
+    },
+    "aime|C/a": {
+      "n_runs": 450,
+      "n_cases": 180,
+      "consensus_acc": 0.23777777777777778
+    },
+    "gpqa_diamond|A/b": {
+      "n_runs": 450,
+      "n_cases": 178,
+      "consensus_acc": 0.5111111111111111
+    },
+    "gpqa_diamond|B/a": {
+      "n_runs": 425,
+      "n_cases": 180,
+      "consensus_acc": 0.5152941176470588
+    },
+    "gpqa_diamond|C/a": {
+      "n_runs": 450,
+      "n_cases": 182,
+      "consensus_acc": 0.5222222222222223
+    }
+  },
+  "runs_per_case": {
+    "min": 1,
+    "max": 16
+  }
+}

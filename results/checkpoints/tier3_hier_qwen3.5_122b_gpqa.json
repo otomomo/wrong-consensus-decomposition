@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.1",
+  "generated_by": "kappa_rival_preference.py",
+  "args": {
+    "input_cases": "/tmp/ac_work/tier3_inputs/qwen3.5_122b_gpqa_cases.parquet",
+    "input_dist": "/tmp/ac_work/tier3_inputs/qwen3.5_122b_gpqa_dist.parquet",
+    "output": "results/checkpoints/tier3_hier_qwen3.5_122b_gpqa.json",
+    "seed": 0,
+    "bootstrap": 10000,
+    "n_sim": 100000,
+    "min_wrong": 1,
+    "shrink": 1.0,
+    "hierarchical": true,
+    "hier_bootstrap": 500,
+    "hier_n_sim": 10000,
+    "tie_break": "argmin",
+    "tie_seed": 0,
+    "c_gpqa": 4,
+    "aime_c_mode": "mean_distinct",
+    "aime_c_fixed": null
+  },
+  "note": "kappa_empirical = E[alpha|wrong]/((1-p)/(C-1)) over ALL wrong runs. kappa_empirical_subset = same over the held-out TEST runs only (the same population that produces kappa_rival_case). share_explained_mech = rival_case / empirical_subset, so the ratio compares the same test-run population on both sides. kappa_iid_perq = primary null (uniform distractor). kappa_rival_case = leak-free per-case answer-preference null: each test run simulated i.i.d. with wrong voters following the per-case option preference estimated from the OTHER runs of that case, and with leave-one-out case accuracy (no self-prediction). kappa_rival_pool = same but preference pooled over all cases in the cell (negative control). mechanical_addon_case = rival_case - perq. shared_residual_case = empirical - rival_case. CIs: run-level percentile bootstrap (B=10^4) plus case-clustered bootstrap; mc_se_* = Monte Carlo SE of the simulated means (from the per-draw std, aggregated over test runs). If rival_case ~= empirical, the 'shared bias' label over-claims.",
+  "cells": [
+    {
+      "model": "qwen3.5:122b",
+      "benchmark": "gpqa",
+      "prompt": "zero_shot",
+      "n_runs": 792,
+      "n_wrong": 0,
+      "C_options": 2.592171717171717,
+      "p": 0.49242424242424243,
+      "consensus_acc": 1.0,
+      "kappa_empirical": NaN,
+      "kappa_iid_perq": NaN,
+      "kappa_rival_case": NaN,
+      "kappa_rival_pool": NaN,
+      "mechanical_addon_case": NaN,
+      "shared_residual_case": NaN,
+      "share_explained_mech": NaN,
+      "n_test_cases": 0
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "generated_by": "tier3_shrink_spot.py",
+  "note": "shrink spot-check (reviewer M1): lam=1 canonical; lam<1 shrinks the LOO per-case preference toward uniform over its support; n_sim=1e5, bootstrap=1e4, seed 0 | 27b-aime and 122b-aime re-derived after the dtype fix",
+  "cells": {
+    "qwen3.5-9b|aime|zero_shot": {
+      "lam_1.0": {
+        "kappa_emp_subset": 3.964753231692759,
+        "kappa_rival_case": 4.187298653321996,
+        "phi": 1.0561309641796346,
+        "phi_ci_run": [
+          0.9799481421078341,
+          1.140564510065456
+        ]
+      },
+      "lam_0.5": {
+        "kappa_emp_subset": 3.964753231692759,
+        "kappa_rival_case": 2.8267805518490867,
+        "phi": 0.7129776777159438,
+        "phi_ci_run": [
+          0.6660747717207524,
+          0.7641956747816185
+        ]
+      },
+      "lam_0.0": {
+        "kappa_emp_subset": 3.964753231692759,
+        "kappa_rival_case": 2.0705343884913465,
+        "phi": 0.5222353744339664,
+        "phi_ci_run": [
+          0.4921154135769964,
+          0.5548398917492141
+        ]
+      }
+    },
+    "qwen3.5-122b|aime|zero_shot": {
+      "lam_1.0": {
+        "kappa_emp_subset": 4.646564275290327,
+        "kappa_rival_case": 4.838735250905004,
+        "phi": 1.0413576492714436
+      },
+      "lam_0.5": {
+        "kappa_emp_subset": 4.646564275290327,
+        "kappa_rival_case": 3.193071213334819,
+        "phi": 0.6871897221598875
+      },
+      "lam_0.0": {
+        "kappa_emp_subset": 4.646564275290327,
+        "kappa_rival_case": 2.2284543681898126,
+        "phi": 0.47959185242317004
+      }
+    },
+    "gemma4-26b|gpqa_diamond|zero_shot": {
+      "lam_1.0": {
+        "kappa_emp_subset": 4.819600452318131,
+        "kappa_rival_case": 4.82720923883355,
+        "phi": 1.0015787172797197,
+        "phi_ci_run": [
+          0.9761508616811257,
+          1.0278096540032238
+        ]
+      },
+      "lam_0.5": {
+        "kappa_emp_subset": 4.819600452318131,
+        "kappa_rival_case": 4.421015393612468,
+        "phi": 0.9172991490375615,
+        "phi_ci_run": [
+          0.8900567590807401,
+          0.9454098508824339
+        ]
+      },
+      "lam_0.0": {
+        "kappa_emp_subset": 4.819600452318131,
+        "kappa_rival_case": 4.161600063693197,
+        "phi": 0.8634740794107842,
+        "phi_ci_run": [
+          0.8331088424309298,
+          0.894678650997338
+        ]
+      }
+    },
+    "qwen3.8-27b|aime|zero_shot": {
+      "lam_1.0": {
+        "kappa_emp_subset": 3.9707581870829287,
+        "kappa_rival_case": 4.178004350346702,
+        "phi": 1.0521930960031651
+      },
+      "lam_0.5": {
+        "kappa_emp_subset": 3.9707581870829287,
+        "kappa_rival_case": 2.8313289095831746,
+        "phi": 0.7130449088523261
+      },
+      "lam_0.0": {
+        "kappa_emp_subset": 3.9707581870829287,
+        "kappa_rival_case": 2.08026349645692,
+        "phi": 0.5238957897824449
+      }
+    }
+  }
+}

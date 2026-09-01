@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "jensen_gap.py",
+  "args": {
+    "input": "data/raw/answer_distributions_deid.parquet",
+    "input_cases": "data/raw/case_results_deid.parquet",
+    "output": "results/jensen_gap.json",
+    "min_runs": 20
+  },
+  "note": "Hard confidence H = max_c p_c (self-consistency C); soft confidence S = sum_c p_c^2 (pairwise agreement over the empirical distribution); Jensen gap J = S - H^2 >= 0 is the agreement mass beyond the plurality, a direct measure of winner fragility. Soft is a scoring rule on the same hard winner, NOT a new voting method. p_c from answer_counts of each K=50 run; all draws including _UNPARSEABLE_ included. Aggregated at (model, benchmark); model/prompt resolved through the (axis, condition) mapping of case_results (answer_distributions carries no model/prompt column).",
+  "cells": {
+    "gpt-4.1|aime": {
+      "model": "gpt-4.1",
+      "benchmark": "aime",
+      "n_runs": 450,
+      "n_correct": 75,
+      "auc_hard": 0.7390044444444445,
+      "auc_soft": 0.7378133333333334,
+      "mean_jensen_gap": 0.05169600000000001,
+      "mean_jensen_gap_incorrect": 0.05490560000000001,
+      "mean_jensen_gap_correct": 0.035648,
+      "mean_H": 0.4635555555555556,
+      "mean_S": 0.3398577777777778,
+      "mean_S_minus_H": -0.12369777777777778
+    },
+    "gpt-4.1|gpqa_diamond": {
+      "model": "gpt-4.1",
+      "benchmark": "gpqa_diamond",
+      "n_runs": 450,
+      "n_correct": 216,
+      "auc_hard": 0.6074311490978157,
+      "auc_soft": 0.6083610319721431,
+      "mean_jensen_gap": 0.02740888888888889,
+      "mean_jensen_gap_incorrect": 0.03398290598290598,
+      "mean_jensen_gap_correct": 0.020287037037037034,
+      "mean_H": 0.8906222222222222,
+      "mean_S": 0.845984,
+      "mean_S_minus_H": -0.04463822222222223
+    },
+    "gpt-4.1-mini|aime": {
+      "model": "gpt-4.1-mini",
+      "benchmark": "aime",
+      "n_runs": 1750,
+      "n_correct": 594,
+      "auc_hard": 0.8472265911712279,
+      "auc_soft": 0.8374437861894609,
+      "mean_jensen_gap": 0.041232457142857136,
+      "mean_jensen_gap_incorrect": 0.054380276816609,
+      "mean_jensen_gap_correct": 0.01564511784511783,
+      "mean_H": 0.5382171428571428,
+      "mean_S": 0.4399931428571429,
+      "mean_S_minus_H": -0.09822399999999999
+    },
+    "gpt-4.1-mini|gpqa_diamond": {
+      "model": "gpt-4.1-mini",
+      "benchmark": "gpqa_diamond",
+      "n_runs": 1750,
+      "n_correct": 931,
+      "auc_hard": 0.678091093773156,
+      "auc_soft": 0.6774432155742575,
+      "mean_jensen_gap": 0.046658742857142846,
+      "mean_jensen_gap_incorrect": 0.06237264957264957,
+      "mean_jensen_gap_correct": 0.03283523093447905,
+      "mean_H": 0.8125257142857143,
+      "mean_S": 0.7481709714285714,
+      "mean_S_minus_H": -0.06435474285714286
+    },
+    "gpt-4.1-nano|aime": {
+      "model": "gpt-4.1-nano",
+      "benchmark": "aime",
+      "n_runs": 450,
+      "n_correct": 103,
+      "auc_hard": 0.8203463809070815,
+      "auc_soft": 0.8063148764723986,
+      "mean_jensen_gap": 0.04111644444444445,
+      "mean_jensen_gap_incorrect": 0.046029971181556203,
+      "mean_jensen_gap_correct": 0.024563106796116504,
+      "mean_H": 0.3915555555555556,
+      "mean_S": 0.2862808888888889,
+      "mean_S_minus_H": -0.10527466666666666
+    },
+    "gpt-4.1-nano|gpqa_diamond": {
+      "model": "gpt-4.1-nano",
+      "benchmark": "gpqa_diamond",
+      "n_runs": 450,
+      "n_correct": 181,
+      "auc_hard": 0.6206946127462056,
+      "auc_soft": 0.6295467148637269,
+      "mean_jensen_gap": 0.05537688888888888,
+      "mean_jensen_gap_incorrect": 0.0620446096654275,
+      "mean_jensen_gap_correct": 0.045467403314917124,
+      "mean_H": 0.7618222222222223,
+      "mean_S": 0.6726613333333333,
+      "mean_S_minus_H": -0.08916088888888889
+    }
+  },
+  "global": {
+    "n_runs": 5300,
+    "auc_hard": 0.7704582589285714,
+    "auc_soft": 0.768811755952381,
+    "mean_jensen_gap": 0.04392996226415094,
+    "mean_jensen_gap_incorrect": 0.054734625,
+    "mean_jensen_gap_correct": 0.027465714285714277
+  }
+}

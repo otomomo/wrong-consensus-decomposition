@@ -1,0 +1,86 @@
+{
+  "generated_by": "tier3_kappa_r2.py",
+  "note": "runs-per-case sensitivity of rival phi: keep first 2 runs/case (Ding design) vs canonical 4 runs/case; n_sim=1e5, bootstrap=1e4, seed 0",
+  "cells": {
+    "qwen3.5-9b-ctx4k|gpqa_diamond|zero_shot": {
+      "phi_2runs": 1.0123620840844454,
+      "kappa_emp_2runs": 3.3438902191190967,
+      "kappa_rival_2runs": 3.3852276711770015,
+      "phi_4runs": 1.0033726422449996,
+      "kappa_emp_4runs": 3.3476183715661256,
+      "n_runs_2runs": 396
+    },
+    "gemma4-26b|gpqa_diamond|zero_shot": {
+      "phi_2runs": 1.0033898668866565,
+      "kappa_emp_2runs": 4.870409455466442,
+      "kappa_rival_2runs": 4.886919495203986,
+      "phi_4runs": 1.0015787172797197,
+      "kappa_emp_4runs": 4.819600452318131,
+      "n_runs_2runs": 396
+    },
+    "qwen3.8-27b|gpqa_diamond|zero_shot": {
+      "phi_2runs": 1.0243942930309355,
+      "kappa_emp_2runs": 2.9776498221371486,
+      "kappa_rival_2runs": 3.050287484441875,
+      "phi_4runs": 1.0113205182106892,
+      "kappa_emp_4runs": 2.978346633113039,
+      "n_runs_2runs": 396
+    },
+    "qwen3.5-9b|aime|zero_shot": {
+      "phi_2runs": 1.1551949079375377,
+      "kappa_emp_2runs": 3.949364944516376,
+      "kappa_rival_2runs": 4.562286273492333,
+      "phi_4runs": 1.0561309641796346,
+      "kappa_emp_4runs": 3.964753231692759,
+      "n_runs_2runs": 400
+    },
+    "gemma4-26b|aime|zero_shot": {
+      "phi_2runs": 1.0491700521965608,
+      "kappa_emp_2runs": 4.6761530965967015,
+      "kappa_rival_2runs": 4.906079788435471,
+      "phi_4runs": 1.0182582292949944,
+      "kappa_emp_4runs": 4.6843991327622145,
+      "n_runs_2runs": 400
+    },
+    "qwen3.8-27b|aime|zero_shot": {
+      "phi_2runs": 1.1297719307652834,
+      "kappa_emp_2runs": 4.011781209370224,
+      "kappa_rival_2runs": 4.532397802718082,
+      "phi_4runs": 1.0521930960031651,
+      "kappa_emp_4runs": 3.9707581870829287,
+      "n_runs_2runs": 400
+    },
+    "qwen3.5-122b|aime|zero_shot": {
+      "phi_2runs": 1.117210408682831,
+      "kappa_emp_2runs": 4.639118084350176,
+      "kappa_rival_2runs": 5.182871010944772,
+      "phi_4runs": 1.0413576492714436,
+      "kappa_emp_4runs": 4.646564275290327,
+      "n_runs_2runs": 400
+    },
+    "qwen3.5-122b|gpqa_diamond|zero_shot": {
+      "phi_2runs": 1.0133625564393127,
+      "kappa_emp_2runs": 3.985295096147448,
+      "kappa_rival_2runs": 4.038548826797035,
+      "phi_4runs": 1.004211162643419,
+      "kappa_emp_4runs": 3.917959133647331,
+      "n_runs_2runs": 396
+    },
+    "gemma4-31b|gpqa_diamond|zero_shot": {
+      "phi_2runs": 1.0031112855291822,
+      "kappa_emp_2runs": 5.247294492419029,
+      "kappa_rival_2runs": 5.26362032384065,
+      "phi_4runs": 1.0008097256580013,
+      "kappa_emp_4runs": 5.2558847153319155,
+      "n_runs_2runs": 396
+    },
+    "gemma4-31b|aime|zero_shot": {
+      "phi_2runs": 1.0350825136575263,
+      "kappa_emp_2runs": 4.0738176971411475,
+      "kappa_rival_2runs": 4.216737462139374,
+      "phi_4runs": 1.0129218406350926,
+      "kappa_emp_4runs": 4.104523961528963,
+      "n_runs_2runs": 400
+    }
+  }
+}

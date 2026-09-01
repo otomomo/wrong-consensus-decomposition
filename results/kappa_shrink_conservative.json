@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "kappa_shrink_conservative.py",
+  "args": {
+    "input": "results/kappa_rival_shrink_lam1.0.json",
+    "output": "results/kappa_shrink_conservative.json"
+  },
+  "note": "phi_conservative = phi * (n_draw / n_test): non-draw test runs counted as zero in the rival numerator; derived from the committed lambda=1 shrinkage evidence (n_sim=2e4).",
+  "cells": [
+    {
+      "model": "gpt-4.1",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "phi_lambda1": 0.6870649626334957,
+      "n_test_runs": 335,
+      "n_test_with_draw": 320,
+      "draw_fraction": 0.9552238805970149,
+      "phi_conservative": 0.6563008598290108,
+      "phi_drop": 0.030764102804484893
+    },
+    {
+      "model": "gpt-4.1",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "phi_lambda1": 0.9237178852116964,
+      "n_test_runs": 205,
+      "n_test_with_draw": 187,
+      "draw_fraction": 0.9121951219512195,
+      "phi_conservative": 0.842610948949206,
+      "phi_drop": 0.08110693626249038
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "benchmark": "aime",
+      "prompt": "chain_of_thought",
+      "phi_lambda1": 0.7269337657589886,
+      "n_test_runs": 212,
+      "n_test_with_draw": 162,
+      "draw_fraction": 0.7641509433962265,
+      "phi_conservative": 0.5554871228913026,
+      "phi_drop": 0.17144664286768596
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "phi_lambda1": 0.5842467517401005,
+      "n_test_runs": 917,
+      "n_test_with_draw": 797,
+      "draw_fraction": 0.8691384950926936,
+      "phi_conservative": 0.5077913425701855,
+      "phi_drop": 0.076455409169915
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "benchmark": "gpqa_diamond",
+      "prompt": "chain_of_thought",
+      "phi_lambda1": 0.9268490124712168,
+      "n_test_runs": 152,
+      "n_test_with_draw": 138,
+      "draw_fraction": 0.9078947368421053,
+      "phi_conservative": 0.8414813402699205,
+      "phi_drop": 0.08536767220129624
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "phi_lambda1": 0.808440629073727,
+      "n_test_runs": 641,
+      "n_test_with_draw": 597,
+      "draw_fraction": 0.9313572542901716,
+      "phi_conservative": 0.7529470445507255,
+      "phi_drop": 0.05549358452300157
+    },
+    {
+      "model": "gpt-4.1-nano",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "phi_lambda1": 0.7770664108218857,
+      "n_test_runs": 313,
+      "n_test_with_draw": 284,
+      "draw_fraction": 0.9073482428115016,
+      "phi_conservative": 0.7050698424070784,
+      "phi_drop": 0.07199656841480728
+    },
+    {
+      "model": "gpt-4.1-nano",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "phi_lambda1": 0.9063046550813018,
+      "n_test_runs": 244,
+      "n_test_with_draw": 219,
+      "draw_fraction": 0.8975409836065574,
+      "phi_conservative": 0.8134455715688733,
+      "phi_drop": 0.09285908351242841
+    }
+  ]
+}

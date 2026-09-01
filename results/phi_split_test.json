@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "phi_split_test.py",
+  "args": {
+    "input": "results/kappa_rival_preference.json",
+    "output": "results/phi_split_test.json",
+    "seed": 0,
+    "n_perm": 10000,
+    "bootstrap": 10000
+  },
+  "note": "Permutation test of the benchmark split of phi across the 8 cells (n=4 per benchmark; exchangeability of benchmark labels is the null): p_permutation = Monte Carlo (1e4 shuffles), p_exact_enumeration = exhaustive over all C(8,4)=70 labelings. Coupled bootstrap resamples cells within benchmark. Small n: treat p as descriptive.",
+  "cells": [
+    "gpt-4.1|aime|zero_shot",
+    "gpt-4.1|gpqa_diamond|zero_shot",
+    "gpt-4.1-mini|aime|chain_of_thought",
+    "gpt-4.1-mini|aime|zero_shot",
+    "gpt-4.1-mini|gpqa_diamond|chain_of_thought",
+    "gpt-4.1-mini|gpqa_diamond|zero_shot",
+    "gpt-4.1-nano|aime|zero_shot",
+    "gpt-4.1-nano|gpqa_diamond|zero_shot"
+  ],
+  "phi": [
+    0.6867541531155129,
+    0.9149150931629724,
+    0.7263719514748915,
+    0.5862896140970527,
+    0.9269002471045149,
+    0.8063340080005763,
+    0.7810765941574208,
+    0.9022698758298152
+  ],
+  "benchmark": [
+    "a",
+    "g",
+    "a",
+    "a",
+    "g",
+    "g",
+    "a",
+    "g"
+  ],
+  "d_obs": 0.19248172781325024,
+  "p_permutation": 0.027997200279972004,
+  "p_exact_enumeration": 0.02857142857142857,
+  "n_exact_labelings": 70,
+  "d_ci_bootstrap": [
+    0.10989656625100375,
+    0.2766024138696347
+  ]
+}

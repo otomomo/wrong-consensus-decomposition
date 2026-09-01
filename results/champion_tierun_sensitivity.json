@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "champion_tierun_sensitivity.py",
+  "args": {
+    "input": "data/raw/case_results_deid.parquet",
+    "output": "results/champion_tierun_sensitivity.json",
+    "seed": 0
+  },
+  "note": "Flip rate under first/last/random run per condition for cases with multiple runs per condition.",
+  "cells": {
+    "gpqa_diamond": {
+      "flip_first": 0.398876404494382,
+      "flip_last": 0.4044943820224719,
+      "flip_random": 0.4438202247191011,
+      "n_pairs": 178,
+      "max_abs_diff": 0.0449438202247191
+    },
+    "aime": {
+      "flip_first": 0.8228571428571428,
+      "flip_last": 0.8,
+      "flip_random": 0.7714285714285715,
+      "n_pairs": 175,
+      "max_abs_diff": 0.05142857142857138
+    }
+  }
+}

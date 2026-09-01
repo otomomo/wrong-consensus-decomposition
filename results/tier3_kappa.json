@@ -1,0 +1,676 @@
+{
+  "generated_by": "tier3_kappa.py",
+  "note": "n_sim=1e5, bootstrap=1e4, seed 0, c_fixed=4 for gpqa, mean_distinct for aime; controlled V100 sampling, 4 runs/case, K=32, T=0.7; 27b-gpqa deduped | 2026-08-22: 27b-aime and 122b-aime recomputed after the float64 dtype fix (load.py now reads answer/ground_truth as str); the other 7 cells verified unchanged by the fix",
+  "cells": {
+    "qwen3.5-9b-ctx4k|gpqa_diamond|zero_shot": {
+      "label": "qwen3.5-9b-ctx4k|gpqa_diamond|zero_shot",
+      "n_runs": 792,
+      "n_cases": 198,
+      "n_wrong": 467,
+      "K": 32,
+      "p": 0.3965435606060606,
+      "consensus_acc": 0.41035353535353536,
+      "C_options": 4,
+      "E_alpha_given_wrong": 0.6733806209850107,
+      "model": "qwen3.5-9b-ctx4k",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "kappa_iid_pooled": 1.7195695628808665,
+      "plurality_share": 0.5772295707161772,
+      "share_lo": 0.5491744957397319,
+      "share_hi": 0.6042023129363673,
+      "wrong_consensus_pooled": 0.12849,
+      "wrong_consensus_emp": 0.5896464646464646,
+      "kappa_empirical": 3.3476183715661256,
+      "kappa_empirical_ci": [
+        3.2614578669218224,
+        3.431117547881648
+      ],
+      "kappa_empirical_ci_clustered": [
+        3.1817231655735694,
+        3.505524597440487
+      ],
+      "kappa_empirical_subset": 3.3476183715661256,
+      "kappa_empirical_subset_ci_clustered": [
+        3.1866631399111216,
+        3.5059789529567262
+      ],
+      "kappa_iid_perq": 1.9248547514038397,
+      "kappa_rival_case": 3.3589086907062065,
+      "kappa_rival_case_ci": [
+        3.2783393939233427,
+        3.440480302581595
+      ],
+      "kappa_rival_case_ci_clustered": [
+        3.2018399128199033,
+        3.5176799881683065
+      ],
+      "kappa_rival_pool": 0.3313407496264734,
+      "kappa_rival_pool_ci": [
+        0.32844579578371663,
+        0.33440045624806064
+      ],
+      "mechanical_addon_case": 1.4340539393023668,
+      "shared_residual_case": -0.011290319140080829,
+      "share_explained_mech": 1.0033726422449996,
+      "share_explained_mech_ci": [
+        0.9691354363794581,
+        1.0402189624427836
+      ],
+      "share_explained_mech_ci_clustered": [
+        0.9998863460578883,
+        1.0068989954277223
+      ],
+      "mc_se_rival_case": 5.2828978594266144e-05,
+      "mc_se_rival_pool": 0.0004820130373564432,
+      "wrong_consensus_perq": 0.5048,
+      "n_test_runs": 467,
+      "n_test_with_draw": 467,
+      "n_test_cases": 130,
+      "degraded": null
+    },
+    "gemma4-26b|gpqa_diamond|zero_shot": {
+      "label": "gemma4-26b|gpqa_diamond|zero_shot",
+      "n_runs": 792,
+      "n_cases": 198,
+      "n_wrong": 420,
+      "K": 32,
+      "p": 0.4616477272727273,
+      "consensus_acc": 0.4696969696969697,
+      "C_options": 4,
+      "E_alpha_given_wrong": 0.8648809523809524,
+      "model": "gemma4-26b",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "kappa_iid_pooled": 1.9554770470062683,
+      "plurality_share": 0.47319186420286796,
+      "share_lo": 0.4447816832188638,
+      "share_hi": 0.5046017293425117,
+      "wrong_consensus_pooled": 0.03434,
+      "wrong_consensus_emp": 0.5303030303030303,
+      "kappa_empirical": 4.819600452318131,
+      "kappa_empirical_ci": [
+        4.728797587636638,
+        4.9079155672823225
+      ],
+      "kappa_empirical_ci_clustered": [
+        4.6469825690478554,
+        4.986060636232389
+      ],
+      "kappa_empirical_subset": 4.819600452318131,
+      "kappa_empirical_subset_ci_clustered": [
+        4.64960110452705,
+        4.985290187455432
+      ],
+      "kappa_iid_perq": 2.2750247391996705,
+      "kappa_rival_case": 4.82720923883355,
+      "kappa_rival_case_ci": [
+        4.741611459120642,
+        4.911783734881719
+      ],
+      "kappa_rival_case_ci_clustered": [
+        4.665619848852666,
+        4.988972926350416
+      ],
+      "kappa_rival_pool": 0.3700863976973372,
+      "kappa_rival_pool_ci": [
+        0.36672421094934526,
+        0.3737504854966159
+      ],
+      "mechanical_addon_case": 2.5521844996338796,
+      "shared_residual_case": -0.007608786515419297,
+      "share_explained_mech": 1.0015787172797197,
+      "share_explained_mech_ci": [
+        0.9761508616811257,
+        1.0278096540032238
+      ],
+      "share_explained_mech_ci_clustered": [
+        0.9998432504876752,
+        1.0035837241763834
+      ],
+      "mc_se_rival_case": 4.5730794262781993e-05,
+      "mc_se_rival_pool": 0.000483182881649676,
+      "wrong_consensus_perq": 0.49566,
+      "n_test_runs": 420,
+      "n_test_with_draw": 420,
+      "n_test_cases": 109,
+      "degraded": null
+    },
+    "qwen3.8-27b|gpqa_diamond|zero_shot": {
+      "label": "qwen3.8-27b|gpqa_diamond|zero_shot",
+      "n_runs": 792,
+      "n_cases": 198,
+      "n_wrong": 455,
+      "K": 32,
+      "p": 0.4155618686868687,
+      "consensus_acc": 0.4255050505050505,
+      "C_options": 4,
+      "E_alpha_given_wrong": 0.5802197802197803,
+      "model": "qwen3.8-27b",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "kappa_iid_pooled": 1.7817926885705766,
+      "plurality_share": 0.6461325347143095,
+      "share_lo": 0.6163338557320907,
+      "share_hi": 0.6775862702798058,
+      "wrong_consensus_pooled": 0.09043,
+      "wrong_consensus_emp": 0.5744949494949495,
+      "kappa_empirical": 2.978346633113039,
+      "kappa_empirical_ci": [
+        2.897260017864933,
+        3.0597857988622237
+      ],
+      "kappa_empirical_ci_clustered": [
+        2.8349805908268966,
+        3.131455619498184
+      ],
+      "kappa_empirical_subset": 2.978346633113039,
+      "kappa_empirical_subset_ci_clustered": [
+        2.8308338211185675,
+        3.129388087589251
+      ],
+      "kappa_iid_perq": 1.922280426018363,
+      "kappa_rival_case": 3.01206306041094,
+      "kappa_rival_case_ci": [
+        2.9401541421448356,
+        3.0860479883720315
+      ],
+      "kappa_rival_case_ci_clustered": [
+        2.871601440160776,
+        3.1533565019795327
+      ],
+      "kappa_rival_pool": 0.3502248608603742,
+      "kappa_rival_pool_ci": [
+        0.34759417923500696,
+        0.352964981194734
+      ],
+      "mechanical_addon_case": 1.0897826343925772,
+      "shared_residual_case": -0.03371642729790114,
+      "share_explained_mech": 1.0113205182106892,
+      "share_explained_mech_ci": [
+        0.9745590587157317,
+        1.0487084008337466
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.0061405302755786,
+        1.01668542648854
+      ],
+      "mc_se_rival_case": 6.67312420411956e-05,
+      "mc_se_rival_pool": 0.0005761793059927749,
+      "wrong_consensus_perq": 0.48897,
+      "n_test_runs": 455,
+      "n_test_with_draw": 455,
+      "n_test_cases": 126,
+      "degraded": null
+    },
+    "qwen3.5-9b|aime|zero_shot": {
+      "label": "qwen3.5-9b|aime|zero_shot",
+      "n_runs": 800,
+      "n_cases": 200,
+      "n_wrong": 783,
+      "K": 32,
+      "p": 0.0126953125,
+      "consensus_acc": 0.02125,
+      "C_options": 20.01875,
+      "E_alpha_given_wrong": 0.20581896551724138,
+      "model": "qwen3.5-9b",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "kappa_iid_pooled": 2.6508509797999507,
+      "plurality_share": 0.6735371502822648,
+      "share_lo": 0.635112659352374,
+      "share_hi": 0.7116824292232667,
+      "wrong_consensus_pooled": 0.99801,
+      "wrong_consensus_emp": 0.97875,
+      "kappa_empirical": 3.964753231692759,
+      "kappa_empirical_ci": [
+        3.743335948247439,
+        4.187708135162005
+      ],
+      "kappa_empirical_ci_clustered": [
+        3.5452340075977613,
+        4.411444743862163
+      ],
+      "kappa_empirical_subset": 3.964753231692759,
+      "kappa_empirical_subset_ci_clustered": [
+        3.5480410442710917,
+        4.418865111099983
+      ],
+      "kappa_iid_perq": 2.6674527176940566,
+      "kappa_rival_case": 4.187298653321996,
+      "kappa_rival_case_ci": [
+        3.979225959330156,
+        4.402492264173198
+      ],
+      "kappa_rival_case_ci_clustered": [
+        3.789714993010104,
+        4.615393290740031
+      ],
+      "kappa_rival_pool": 1.4714510285710496,
+      "kappa_rival_pool_ci": [
+        1.4687044545530221,
+        1.4746566983881577
+      ],
+      "mechanical_addon_case": 1.5198459356279392,
+      "shared_residual_case": -0.22254542162923663,
+      "share_explained_mech": 1.0561309641796346,
+      "share_explained_mech_ci": [
+        0.9799481421078341,
+        1.140564510065456
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.044902118050268,
+        1.0692840607030152
+      ],
+      "mc_se_rival_case": 0.00011366992395753423,
+      "mc_se_rival_pool": 0.00012531336421356794,
+      "wrong_consensus_perq": 0.97122,
+      "n_test_runs": 783,
+      "n_test_with_draw": 783,
+      "n_test_cases": 197,
+      "degraded": null
+    },
+    "gemma4-26b|aime|zero_shot": {
+      "label": "gemma4-26b|aime|zero_shot",
+      "n_runs": 800,
+      "n_cases": 200,
+      "n_wrong": 775,
+      "K": 32,
+      "p": 0.0334765625,
+      "consensus_acc": 0.03125,
+      "C_options": 11.77375,
+      "E_alpha_given_wrong": 0.42024193548387095,
+      "model": "gemma4-26b",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "kappa_iid_pooled": 1.9558604476951045,
+      "plurality_share": 0.426989742682151,
+      "share_lo": 0.40624211190194476,
+      "share_hi": 0.4501874770412345,
+      "wrong_consensus_pooled": 0.99529,
+      "wrong_consensus_emp": 0.96875,
+      "kappa_empirical": 4.6843991327622145,
+      "kappa_empirical_ci": [
+        4.4515613030990835,
+        4.918124669994642
+      ],
+      "kappa_empirical_ci_clustered": [
+        4.233123944138278,
+        5.153390343633032
+      ],
+      "kappa_empirical_subset": 4.6843991327622145,
+      "kappa_empirical_subset_ci_clustered": [
+        4.229216344016489,
+        5.145212155349385
+      ],
+      "kappa_iid_perq": 1.9974646611787557,
+      "kappa_rival_case": 4.76992796623746,
+      "kappa_rival_case_ci": [
+        4.544647111033052,
+        5.002658896958053
+      ],
+      "kappa_rival_case_ci_clustered": [
+        4.3208090194437645,
+        5.226059702886229
+      ],
+      "kappa_rival_pool": 0.8656515464359654,
+      "kappa_rival_pool_ci": [
+        0.8618878941175685,
+        0.8700086712392991
+      ],
+      "mechanical_addon_case": 2.772463305058704,
+      "shared_residual_case": -0.08552883347524531,
+      "share_explained_mech": 1.0182582292949944,
+      "share_explained_mech_ci": [
+        0.9513599883305652,
+        1.0891091651752614
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.0136437069961308,
+        1.0237833779953454
+      ],
+      "mc_se_rival_case": 7.650631621934668e-05,
+      "mc_se_rival_pool": 0.00048008611692947577,
+      "wrong_consensus_perq": 0.95503,
+      "n_test_runs": 775,
+      "n_test_with_draw": 775,
+      "n_test_cases": 195,
+      "degraded": null
+    },
+    "qwen3.8-27b|aime|zero_shot": {
+      "label": "qwen3.8-27b|aime|zero_shot",
+      "n_runs": 800,
+      "n_cases": 200,
+      "n_wrong": 783,
+      "K": 32,
+      "p": 0.0225,
+      "consensus_acc": 0.02125,
+      "C_options": 17.4975,
+      "E_alpha_given_wrong": 0.23527298850574713,
+      "model": "qwen3.8-27b",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "kappa_iid_pooled": 2.4375043012223268,
+      "plurality_share": 0.6217937272342362,
+      "share_lo": 0.5890415913146038,
+      "share_hi": 0.6579898263192364,
+      "wrong_consensus_pooled": 0.99374,
+      "wrong_consensus_emp": 0.97875,
+      "kappa_empirical": 3.9707581870829287,
+      "kappa_empirical_ci": [
+        3.759253849382498,
+        4.186304008943241
+      ],
+      "kappa_empirical_ci_clustered": [
+        3.574167718768807,
+        4.400275587184258
+      ],
+      "kappa_empirical_subset": 3.9707581870829287,
+      "kappa_empirical_subset_ci_clustered": [
+        3.572206549438079,
+        4.400934221661944
+      ],
+      "kappa_iid_perq": 2.4664666374834865,
+      "kappa_rival_case": 4.178004350346702,
+      "kappa_rival_case_ci": [
+        3.9783327527885533,
+        4.384505560230921
+      ],
+      "kappa_rival_case_ci_clustered": [
+        3.787850732287724,
+        4.591438708180185
+      ],
+      "kappa_rival_pool": 1.7739481806194062,
+      "kappa_rival_pool_ci": [
+        1.7692819814741343,
+        1.779291184583575
+      ],
+      "mechanical_addon_case": 1.7115377128632159,
+      "shared_residual_case": -0.20724616326377365,
+      "share_explained_mech": 1.0521930960031651,
+      "share_explained_mech_ci": [
+        0.9798656646623105,
+        1.1310796441674347
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.0424646979683079,
+        1.0638443868846146
+      ],
+      "mc_se_rival_case": 0.00010542801497705162,
+      "mc_se_rival_pool": 0.00010255458947567341,
+      "wrong_consensus_perq": 0.9614,
+      "n_test_runs": 783,
+      "n_test_with_draw": 783,
+      "n_test_cases": 197,
+      "degraded": null
+    },
+    "qwen3.5-122b|aime|zero_shot": {
+      "label": "qwen3.5-122b|aime|zero_shot",
+      "n_runs": 800,
+      "n_cases": 200,
+      "n_wrong": 587,
+      "K": 32,
+      "p": 0.221796875,
+      "consensus_acc": 0.26625,
+      "C_options": 15.57875,
+      "E_alpha_given_wrong": 0.2480302385008518,
+      "model": "qwen3.5-122b",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "kappa_iid_pooled": 3.0324107789011614,
+      "plurality_share": 0.6225058457249126,
+      "share_lo": 0.5757236541548327,
+      "share_hi": 0.6702166696944568,
+      "wrong_consensus_pooled": 0.11739,
+      "wrong_consensus_emp": 0.73375,
+      "kappa_empirical": 4.646564275290327,
+      "kappa_empirical_ci": [
+        4.341381045361406,
+        4.965710136653904
+      ],
+      "kappa_empirical_ci_clustered": [
+        4.0515923199027695,
+        5.271934304764843
+      ],
+      "kappa_empirical_subset": 4.646564275290327,
+      "kappa_empirical_subset_ci_clustered": [
+        4.067643882734721,
+        5.263952115427535
+      ],
+      "kappa_iid_perq": 2.892734044079598,
+      "kappa_rival_case": 4.838735250905004,
+      "kappa_rival_case_ci": [
+        4.55331766567903,
+        5.140929649170191
+      ],
+      "kappa_rival_case_ci_clustered": [
+        4.273226124678894,
+        5.429169926861475
+      ],
+      "kappa_rival_pool": 1.1618175458532307,
+      "kappa_rival_pool_ci": [
+        1.1568673594972052,
+        1.1670590460585581
+      ],
+      "mechanical_addon_case": 1.946001206825406,
+      "shared_residual_case": -0.192170975614677,
+      "share_explained_mech": 1.0413576492714436,
+      "share_explained_mech_ci": [
+        0.9506154986764517,
+        1.1412799514639917
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.0310674775109527,
+        1.053754105559911
+      ],
+      "mc_se_rival_case": 0.0001404438067370284,
+      "mc_se_rival_pool": 0.00023289358508227174,
+      "wrong_consensus_perq": 0.7088,
+      "n_test_runs": 587,
+      "n_test_with_draw": 587,
+      "n_test_cases": 152,
+      "degraded": null
+    },
+    "gemma4-31b|gpqa_diamond|zero_shot": {
+      "label": "gemma4-31b|gpqa_diamond|zero_shot",
+      "n_runs": 792,
+      "n_cases": 198,
+      "n_wrong": 425,
+      "K": 32,
+      "p": 0.4694602272727273,
+      "consensus_acc": 0.4633838383838384,
+      "C_options": 4,
+      "E_alpha_given_wrong": 0.929485294117647,
+      "model": "gemma4-31b",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "kappa_iid_pooled": 1.9927450820714376,
+      "plurality_share": 0.44630774136873036,
+      "share_lo": 0.41565279776757713,
+      "share_hi": 0.4780853540661652,
+      "wrong_consensus_pooled": 0.02811,
+      "wrong_consensus_emp": 0.5366161616161617,
+      "kappa_empirical": 5.2558847153319155,
+      "kappa_empirical_ci": [
+        5.180212615166549,
+        5.327814788566029
+      ],
+      "kappa_empirical_ci_clustered": [
+        5.108807226624897,
+        5.391622565026461
+      ],
+      "kappa_empirical_subset": 5.2558847153319155,
+      "kappa_empirical_subset_ci_clustered": [
+        5.109416644393921,
+        5.387701058767731
+      ],
+      "kappa_iid_perq": 2.3537581901309643,
+      "kappa_rival_case": 5.260140540041417,
+      "kappa_rival_case_ci": [
+        5.189153244864095,
+        5.328981255290273
+      ],
+      "kappa_rival_case_ci_clustered": [
+        5.112490783701736,
+        5.392522210153736
+      ],
+      "kappa_rival_pool": 0.36974188024948557,
+      "kappa_rival_pool_ci": [
+        0.3677283546302539,
+        0.37203572031396626
+      ],
+      "mechanical_addon_case": 2.9063823499104524,
+      "shared_residual_case": -0.004255824709501255,
+      "share_explained_mech": 1.0008097256580013,
+      "share_explained_mech_ci": [
+        0.9814086857879754,
+        1.020412163356918
+      ],
+      "share_explained_mech_ci_clustered": [
+        0.9998030262082539,
+        1.0019591540222237
+      ],
+      "mc_se_rival_case": 2.9879533279380317e-05,
+      "mc_se_rival_pool": 0.0003086662413422081,
+      "wrong_consensus_perq": 0.51795,
+      "n_test_runs": 425,
+      "n_test_with_draw": 425,
+      "n_test_cases": 107,
+      "degraded": null
+    },
+    "gemma4-31b|aime|zero_shot": {
+      "label": "gemma4-31b|aime|zero_shot",
+      "n_runs": 800,
+      "n_cases": 200,
+      "n_wrong": 757,
+      "K": 32,
+      "p": 0.053515625,
+      "consensus_acc": 0.05375,
+      "C_options": 9.2125,
+      "E_alpha_given_wrong": 0.47304326287978865,
+      "model": "gemma4-31b",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "kappa_iid_pooled": 1.7892402669911196,
+      "plurality_share": 0.4525458163390257,
+      "share_lo": 0.43323229606650226,
+      "share_hi": 0.4734356869261507,
+      "wrong_consensus_pooled": 0.98886,
+      "wrong_consensus_emp": 0.94625,
+      "kappa_empirical": 4.104523961528963,
+      "kappa_empirical_ci": [
+        3.926860650165112,
+        4.2782561139367274
+      ],
+      "kappa_empirical_ci_clustered": [
+        3.7602989236279916,
+        4.4468303701227345
+      ],
+      "kappa_empirical_subset": 4.104523961528963,
+      "kappa_empirical_subset_ci_clustered": [
+        3.7613255719778187,
+        4.452657219854976
+      ],
+      "kappa_iid_perq": 1.859379428248011,
+      "kappa_rival_case": 4.157561966042759,
+      "kappa_rival_case_ci": [
+        3.9868995855852787,
+        4.326935625871955
+      ],
+      "kappa_rival_case_ci_clustered": [
+        3.815980818436186,
+        4.500058989487173
+      ],
+      "kappa_rival_pool": 0.7829633380179564,
+      "kappa_rival_pool_ci": [
+        0.7794416822406176,
+        0.7868939713383956
+      ],
+      "mechanical_addon_case": 2.298182537794748,
+      "shared_residual_case": -0.053038004513796366,
+      "share_explained_mech": 1.0129218406350926,
+      "share_explained_mech_ci": [
+        0.9548424788471445,
+        1.0745834469150763
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.0087735640492725,
+        1.0175627284118727
+      ],
+      "mc_se_rival_case": 6.343990191776469e-05,
+      "mc_se_rival_pool": 9.497579153718907e-05,
+      "wrong_consensus_perq": 0.93165,
+      "n_test_runs": 757,
+      "n_test_with_draw": 757,
+      "n_test_cases": 190,
+      "degraded": null
+    },
+    "qwen3.5-122b|gpqa_diamond|zero_shot": {
+      "label": "qwen3.5-122b|gpqa_diamond|zero_shot",
+      "n_runs": 792,
+      "n_cases": 198,
+      "n_wrong": 398,
+      "K": 32,
+      "p": 0.4904119318181818,
+      "consensus_acc": 0.49747474747474746,
+      "C_options": 4,
+      "E_alpha_given_wrong": 0.6655150753768844,
+      "model": "qwen3.5-122b",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "kappa_iid_pooled": 2.084224748911918,
+      "plurality_share": 0.5800136788989431,
+      "share_lo": 0.5444295534004518,
+      "share_hi": 0.6156780048687482,
+      "wrong_consensus_pooled": 0.01702,
+      "wrong_consensus_emp": 0.5025252525252525,
+      "kappa_empirical": 3.917959133647331,
+      "kappa_empirical_ci": [
+        3.8060966855181837,
+        4.0298215817764795
+      ],
+      "kappa_empirical_ci_clustered": [
+        3.7166132000632945,
+        4.1154782965817915
+      ],
+      "kappa_empirical_subset": 3.917959133647331,
+      "kappa_empirical_subset_ci_clustered": [
+        3.714102613372521,
+        4.119992345943913
+      ],
+      "kappa_iid_perq": 2.2721634157548523,
+      "kappa_rival_case": 3.934458296789389,
+      "kappa_rival_case_ci": [
+        3.830069989193473,
+        4.0374299635465185
+      ],
+      "kappa_rival_case_ci_clustered": [
+        3.7323809146226554,
+        4.133663115293281
+      ],
+      "kappa_rival_pool": 0.40390264462981107,
+      "kappa_rival_pool_ci": [
+        0.39938156164448535,
+        0.4088277021953401
+      ],
+      "mechanical_addon_case": 1.6622948810345366,
+      "shared_residual_case": -0.016499163142057682,
+      "share_explained_mech": 1.004211162643419,
+      "share_explained_mech_ci": [
+        0.9656934717101948,
+        1.0435186988498188
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.0003552006977514,
+        1.0080982970526275
+      ],
+      "mc_se_rival_case": 6.78020888648849e-05,
+      "mc_se_rival_pool": 0.0008375686676678064,
+      "wrong_consensus_perq": 0.43406,
+      "n_test_runs": 398,
+      "n_test_with_draw": 398,
+      "n_test_cases": 109,
+      "degraded": null
+    }
+  }
+}

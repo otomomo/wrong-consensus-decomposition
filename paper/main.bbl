@@ -1,0 +1,240 @@
+\begin{thebibliography}{27}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Inproceedings
+\bibitem[{Wang et~al.(2023)Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery,
+  and Zhou}]{wang2022selfconsistency}
+\bibinfo{author}{X.~Wang}, \bibinfo{author}{J.~Wei},
+  \bibinfo{author}{D.~Schuurmans}, \bibinfo{author}{Q.~Le},
+  \bibinfo{author}{E.~Chi}, \bibinfo{author}{S.~Narang},
+  \bibinfo{author}{A.~Chowdhery}, \bibinfo{author}{D.~Zhou},
+\newblock \bibinfo{title}{Self-consistency improves chain of thought reasoning
+  in language models},
+\newblock in: \bibinfo{booktitle}{International Conference on Learning
+  Representations (ICLR)}, \bibinfo{year}{2023}.
+  \bibinfo{note}{ArXiv:2203.11171}.
+%Type = Misc
+\bibitem[{Ding(2026)}]{ding2026auditing}
+\bibinfo{author}{K.~Ding}, \bibinfo{title}{When {LLM}s agree, are they right?
+  {Auditing Self-Consistency and Cross-Model Agreement as Confidence Signals}},
+  \bibinfo{year}{2026}. \href{http://arxiv.org/abs/2607.08065}{{\tt
+  arXiv:2607.08065}}.
+%Type = Misc
+\bibitem[{Bahuguna(2026)}]{bahuguna2026when}
+\bibinfo{author}{U.~Bahuguna}, \bibinfo{title}{When self-consistency backfires:
+  Majority vote hurts the majority of hard science problems for small {LLM}s},
+  \bibinfo{year}{2026}. \href{http://arxiv.org/abs/2608.11403}{{\tt
+  arXiv:2608.11403}}, \bibinfo{note}{v2 of 2026-08-15}.
+%Type = Misc
+\bibitem[{Hamidieh et~al.(2026)Hamidieh, Thost, Gerych, Yurochkin, and
+  Ghassemi}]{hamidieh2026}
+\bibinfo{author}{K.~Hamidieh}, \bibinfo{author}{V.~Thost},
+  \bibinfo{author}{W.~Gerych}, \bibinfo{author}{M.~Yurochkin},
+  \bibinfo{author}{M.~Ghassemi}, \bibinfo{title}{Complementing self-consistency
+  with cross-model disagreement for uncertainty quantification},
+  \bibinfo{year}{2026}. \href{http://arxiv.org/abs/2604.17112}{{\tt
+  arXiv:2604.17112}}.
+%Type = Misc
+\bibitem[{Fadnavis et~al.(2026)Fadnavis, Kanakaraj, and Wyss}]{fadnavis2026}
+\bibinfo{author}{S.~Fadnavis}, \bibinfo{author}{P.~Kanakaraj},
+  \bibinfo{author}{F.~Wyss}, \bibinfo{title}{Beyond consensus: Trace-level
+  synthesis in mixture of agents}, \bibinfo{year}{2026}.
+  \href{http://arxiv.org/abs/2605.29116}{{\tt arXiv:2605.29116}}.
+%Type = Misc
+\bibitem[{Kim(2026)}]{kim2026}
+\bibinfo{author}{D.~Kim}, \bibinfo{title}{Are diversity metrics measuring
+  diversity? {A Capability-Controlled Audit of Majority-Vote Gain in {LLM}
+  Ensembles}}, \bibinfo{year}{2026}.
+  \href{http://arxiv.org/abs/2607.20768}{{\tt arXiv:2607.20768}}.
+%Type = Inproceedings
+\bibitem[{Chen et~al.(2024)Chen, Davis, Hanin, Bailis, Stoica, Zaharia, and
+  Zou}]{chen2024}
+\bibinfo{author}{L.~Chen}, \bibinfo{author}{J.~Q. Davis},
+  \bibinfo{author}{B.~Hanin}, \bibinfo{author}{P.~Bailis},
+  \bibinfo{author}{I.~Stoica}, \bibinfo{author}{M.~Zaharia},
+  \bibinfo{author}{J.~Zou},
+\newblock \bibinfo{title}{Are more {LLM} calls all you need? {Towards the
+  Scaling Properties of Compound {AI} Systems}},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems (NeurIPS)}, volume~\bibinfo{volume}{37}, \bibinfo{year}{2024}, pp.
+  \bibinfo{pages}{45767--45790}. \DOIprefix\doi{10.52202/079017-1455}.
+  \href{http://arxiv.org/abs/2403.02419}{{\tt arXiv:2403.02419}}.
+%Type = Inproceedings
+\bibitem[{Tan et~al.(2025)Tan, Sun, Liu, Su, Cao, Chen, Wang, Cai, Wang, Shen,
+  and Cheng}]{tan2025}
+\bibinfo{author}{H.~Tan}, \bibinfo{author}{F.~Sun}, \bibinfo{author}{S.~Liu},
+  \bibinfo{author}{D.~Su}, \bibinfo{author}{Q.~Cao}, \bibinfo{author}{X.~Chen},
+  \bibinfo{author}{J.~Wang}, \bibinfo{author}{X.~Cai},
+  \bibinfo{author}{Y.~Wang}, \bibinfo{author}{H.~Shen},
+  \bibinfo{author}{X.~Cheng},
+\newblock \bibinfo{title}{Too consistent to detect: A study of self-consistent
+  errors in {LLM}s},
+\newblock in: \bibinfo{booktitle}{Empirical Methods in Natural Language
+  Processing (EMNLP)}, \bibinfo{year}{2025}, pp. \bibinfo{pages}{4755--4765}.
+  \DOIprefix\doi{10.18653/v1/2025.emnlp-main.238}.
+  \href{http://arxiv.org/abs/2505.17656}{{\tt arXiv:2505.17656}}.
+%Type = Article
+\bibitem[{McCoy et~al.(2024)McCoy, Yao, Friedman, Hardy, and
+  Griffiths}]{mccoy2024}
+\bibinfo{author}{R.~T. McCoy}, \bibinfo{author}{S.~Yao},
+  \bibinfo{author}{D.~Friedman}, \bibinfo{author}{M.~D. Hardy},
+  \bibinfo{author}{T.~L. Griffiths},
+\newblock \bibinfo{title}{Embers of autoregression show how large language
+  models are shaped by the problem they are trained to solve},
+\newblock \bibinfo{journal}{Proceedings of the National Academy of Sciences}
+  \bibinfo{volume}{121} (\bibinfo{year}{2024}) \bibinfo{pages}{e2322420121}.
+  \DOIprefix\doi{10.1073/pnas.2322420121}.
+%Type = Inproceedings
+\bibitem[{Manakul et~al.(2023)Manakul, Liusie, and Gales}]{manakul2023}
+\bibinfo{author}{P.~Manakul}, \bibinfo{author}{A.~Liusie},
+  \bibinfo{author}{M.~J.~F. Gales},
+\newblock \bibinfo{title}{{SelfCheckGPT}: Zero-resource black-box hallucination
+  detection for generative large language models},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 2023 Conference on
+  Empirical Methods in Natural Language Processing (EMNLP)},
+  \bibinfo{year}{2023}, pp. \bibinfo{pages}{9004--9017}.
+  \DOIprefix\doi{10.18653/v1/2023.emnlp-main.557}.
+%Type = Inproceedings
+\bibitem[{Kuhn et~al.(2023)Kuhn, Gal, and Farquhar}]{kuhn2023}
+\bibinfo{author}{L.~Kuhn}, \bibinfo{author}{Y.~Gal},
+  \bibinfo{author}{S.~Farquhar},
+\newblock \bibinfo{title}{Semantic uncertainty: Linguistic invariances for
+  uncertainty estimation in natural language generation},
+\newblock in: \bibinfo{booktitle}{International Conference on Learning
+  Representations (ICLR)}, \bibinfo{year}{2023}.
+%Type = Article
+\bibitem[{Farquhar et~al.(2024)Farquhar, Kossen, Kuhn, and Gal}]{farquhar2024}
+\bibinfo{author}{S.~Farquhar}, \bibinfo{author}{J.~Kossen},
+  \bibinfo{author}{L.~Kuhn}, \bibinfo{author}{Y.~Gal},
+\newblock \bibinfo{title}{Detecting hallucinations in large language models
+  using semantic entropy},
+\newblock \bibinfo{journal}{Nature} \bibinfo{volume}{630}
+  (\bibinfo{year}{2024}) \bibinfo{pages}{625--630}.
+  \DOIprefix\doi{10.1038/s41586-024-07421-0}.
+%Type = Inproceedings
+\bibitem[{Xiao et~al.(2025)Xiao, Bhattacharjya, Ganesan, Marinescu, Mirylenka,
+  Pham, Glass, and Lee}]{xiao2025}
+\bibinfo{author}{Q.~Xiao}, \bibinfo{author}{D.~Bhattacharjya},
+  \bibinfo{author}{B.~Ganesan}, \bibinfo{author}{R.~Marinescu},
+  \bibinfo{author}{K.~Mirylenka}, \bibinfo{author}{N.~H. Pham},
+  \bibinfo{author}{M.~Glass}, \bibinfo{author}{J.~Lee},
+\newblock \bibinfo{title}{The consistency hypothesis in uncertainty
+  quantification for large language models},
+\newblock in: \bibinfo{booktitle}{Conference on Uncertainty in Artificial
+  Intelligence (UAI)}, \bibinfo{year}{2025}, pp. \bibinfo{pages}{4636--4651}.
+  \href{http://arxiv.org/abs/2506.21849}{{\tt arXiv:2506.21849}}.
+%Type = Misc
+\bibitem[{Nguyen et~al.(2025)Nguyen, Payani, and Mirzasoleiman}]{nguyen2025}
+\bibinfo{author}{D.~Nguyen}, \bibinfo{author}{A.~Payani},
+  \bibinfo{author}{B.~Mirzasoleiman}, \bibinfo{title}{Beyond semantic entropy:
+  Boosting {LLM} uncertainty quantification with pairwise semantic similarity},
+  \bibinfo{year}{2025}. \href{http://arxiv.org/abs/2506.00245}{{\tt
+  arXiv:2506.00245}}.
+%Type = Inproceedings
+\bibitem[{Kohavi and Wolpert(1996)}]{kohavi1996}
+\bibinfo{author}{R.~Kohavi}, \bibinfo{author}{D.~H. Wolpert},
+\newblock \bibinfo{title}{Bias plus variance decomposition for zero-one loss
+  functions},
+\newblock in: \bibinfo{booktitle}{International Conference on Machine Learning
+  (ICML)}, \bibinfo{year}{1996}, pp. \bibinfo{pages}{275--283}.
+%Type = Inproceedings
+\bibitem[{Ueda and Nakano(1996)}]{ueda1996}
+\bibinfo{author}{N.~Ueda}, \bibinfo{author}{R.~Nakano},
+\newblock \bibinfo{title}{Generalization error of ensemble estimators},
+\newblock in: \bibinfo{booktitle}{IEEE International Conference on Neural
+  Networks (ICNN)}, \bibinfo{year}{1996}, pp. \bibinfo{pages}{90--95}.
+  \DOIprefix\doi{10.1109/ICNN.1996.548872}.
+%Type = Inproceedings
+\bibitem[{Krogh and Vedelsby(1994)}]{krogh1995}
+\bibinfo{author}{A.~Krogh}, \bibinfo{author}{J.~Vedelsby},
+\newblock \bibinfo{title}{Neural network ensembles, cross validation, and
+  active learning},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems (NIPS)}, \bibinfo{year}{1994}, pp. \bibinfo{pages}{231--238}.
+%Type = Misc
+\bibitem[{Arzhantsev et~al.(2026)Arzhantsev, Sakhi, and
+  Chopin}]{arzhantsev2026}
+\bibinfo{author}{A.~Arzhantsev}, \bibinfo{author}{O.~Sakhi},
+  \bibinfo{author}{N.~Chopin}, \bibinfo{title}{Self-consistency via marginal
+  sharpening}, \bibinfo{year}{2026}.
+  \href{http://arxiv.org/abs/2605.28142}{{\tt arXiv:2605.28142}}.
+%Type = Misc
+\bibitem[{Ma and Zhang(2026)}]{anchorscore2026}
+\bibinfo{author}{Y.~Ma}, \bibinfo{author}{L.~Zhang},
+  \bibinfo{title}{{AnchorScore}: A {CLIP}-based diagnostic of {MLLM} annotation
+  difficulty}, \bibinfo{year}{2026}.
+  \href{http://arxiv.org/abs/2608.16690}{{\tt arXiv:2608.16690}}.
+%Type = Article
+\bibitem[{Cohen(1960)}]{cohen1960}
+\bibinfo{author}{J.~Cohen},
+\newblock \bibinfo{title}{A coefficient of agreement for nominal scales},
+\newblock \bibinfo{journal}{Educational and Psychological Measurement}
+  \bibinfo{volume}{20} (\bibinfo{year}{1960}) \bibinfo{pages}{37--46}.
+  \DOIprefix\doi{10.1177/001316446002000104}.
+%Type = Article
+\bibitem[{Scott(1955)}]{scott1955}
+\bibinfo{author}{W.~A. Scott},
+\newblock \bibinfo{title}{Reliability of content analysis: The case of nominal
+  scale coding},
+\newblock \bibinfo{journal}{Public Opinion Quarterly} \bibinfo{volume}{19}
+  (\bibinfo{year}{1955}) \bibinfo{pages}{321--325}.
+  \DOIprefix\doi{10.1086/266577}.
+%Type = Article
+\bibitem[{Fleiss(1971)}]{fleiss1971}
+\bibinfo{author}{J.~L. Fleiss},
+\newblock \bibinfo{title}{Measuring nominal scale agreement among many raters},
+\newblock \bibinfo{journal}{Psychological Bulletin} \bibinfo{volume}{76}
+  (\bibinfo{year}{1971}) \bibinfo{pages}{378--382}.
+  \DOIprefix\doi{10.1037/h0031619}.
+%Type = Article
+\bibitem[{Krippendorff(1970)}]{krippendorff1970}
+\bibinfo{author}{K.~Krippendorff},
+\newblock \bibinfo{title}{Bivariate agreement coefficients for reliability of
+  data},
+\newblock \bibinfo{journal}{Sociological Methodology} \bibinfo{volume}{2}
+  (\bibinfo{year}{1970}) \bibinfo{pages}{139--150}.
+  \DOIprefix\doi{10.2307/270787}.
+%Type = Article
+\bibitem[{Kuncheva and Whitaker(2003)}]{kuncheva2003}
+\bibinfo{author}{L.~I. Kuncheva}, \bibinfo{author}{C.~J. Whitaker},
+\newblock \bibinfo{title}{Measures of diversity in classifier ensembles and
+  their relationship with the ensemble accuracy},
+\newblock \bibinfo{journal}{Machine Learning} \bibinfo{volume}{51}
+  (\bibinfo{year}{2003}) \bibinfo{pages}{181--207}.
+  \DOIprefix\doi{10.1023/A:1022859003006}.
+%Type = Inproceedings
+\bibitem[{Kim et~al.(2025)Kim, Garg, Peng, and Garg}]{kim2025correlated}
+\bibinfo{author}{E.~Kim}, \bibinfo{author}{A.~Garg}, \bibinfo{author}{K.~Peng},
+  \bibinfo{author}{N.~Garg},
+\newblock \bibinfo{title}{Correlated {Errors} in {Large} {Language} {Models}},
+\newblock in: \bibinfo{booktitle}{International Conference on Machine Learning
+  (ICML)}, \bibinfo{year}{2025}. \href{http://arxiv.org/abs/2506.07962}{{\tt
+  arXiv:2506.07962}}.
+%Type = Inproceedings
+\bibitem[{Ali(2026)}]{ali2026stochastic}
+\bibinfo{author}{I.~Ali},
+\newblock \bibinfo{title}{Stochastic {Sampling} is {Epistemically} {Shallow}:
+  {The} {Dimensionality} {Gap} {Between} {Temperature} {Variation} and {Model}
+  {Diversity} in {LLMs}},
+\newblock in: \bibinfo{booktitle}{Explainable, Interpretable, and Transparent
+  ML Workshop (EIML) at ICML}, \bibinfo{year}{2026}.
+  \href{http://arxiv.org/abs/2607.20464}{{\tt arXiv:2607.20464}}.
+%Type = Misc
+\bibitem[{Cordero-Encinar and Duncan(2025)}]{corderoencinar2025certified}
+\bibinfo{author}{P.~Cordero-Encinar}, \bibinfo{author}{A.~B. Duncan},
+  \bibinfo{title}{Certified {Self-Consistency}: {Statistical} {Guarantees} and
+  {Test-Time} {Training} for {Reliable} {Reasoning} in {LLMs}},
+  \bibinfo{year}{2025}. \href{http://arxiv.org/abs/2510.17472}{{\tt
+  arXiv:2510.17472}}.
+
+\end{thebibliography}

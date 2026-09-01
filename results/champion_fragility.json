@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "champion_fragility.py",
+  "args": {
+    "input": "data/raw/case_results_deid.parquet",
+    "output": "results/champion_fragility.json",
+    "seed": 0,
+    "bootstrap": 10000,
+    "n_bins": 3
+  },
+  "note": "champion = plurality label of one K=50 run; paired within identical (model, benchmark, case_id, prompt); flip = champion differs between run a and run b; CI = percentile bootstrap (coupled, B=10^4); consensus bin = C of run a.",
+  "cells": {
+    "gpt-4.1-mini|aime|zero_shot": {
+      "model": "gpt-4.1-mini",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "n_pairs": 175,
+      "n_flips": 144,
+      "flip_rate": 0.8228571428571428,
+      "flip_lo": 0.7657142857142857,
+      "flip_hi": 0.88,
+      "wilson_lo": 0.7595379999063371,
+      "wilson_hi": 0.8723060453269867,
+      "by_consensus_bin": [
+        {
+          "lo": 0.06,
+          "hi": 0.28,
+          "n_pairs": 54,
+          "n_flips": 49,
+          "flip_rate": 0.9074074074074074,
+          "flip_lo": 0.8148148148148148,
+          "flip_hi": 0.9814814814814815
+        },
+        {
+          "lo": 0.28,
+          "hi": 0.84,
+          "n_pairs": 61,
+          "n_flips": 48,
+          "flip_rate": 0.7868852459016393,
+          "flip_lo": 0.6885245901639344,
+          "flip_hi": 0.8852459016393442
+        },
+        {
+          "lo": 0.84,
+          "hi": 1.0,
+          "n_pairs": 60,
+          "n_flips": 47,
+          "flip_rate": 0.7833333333333333,
+          "flip_lo": 0.6833333333333333,
+          "flip_hi": 0.8833333333333333
+        }
+      ]
+    },
+    "gpt-4.1-mini|gpqa_diamond|zero_shot": {
+      "model": "gpt-4.1-mini",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "n_pairs": 178,
+      "n_flips": 71,
+      "flip_rate": 0.398876404494382,
+      "flip_lo": 0.3258426966292135,
+      "flip_hi": 0.47191011235955055,
+      "wilson_lo": 0.3298084742899461,
+      "wilson_hi": 0.4722170248257678,
+      "by_consensus_bin": [
+        {
+          "lo": 0.28,
+          "hi": 0.72,
+          "n_pairs": 58,
+          "n_flips": 37,
+          "flip_rate": 0.6379310344827587,
+          "flip_lo": 0.5172413793103449,
+          "flip_hi": 0.7586206896551724
+        },
+        {
+          "lo": 0.72,
+          "hi": 0.98,
+          "n_pairs": 50,
+          "n_flips": 22,
+          "flip_rate": 0.44,
+          "flip_lo": 0.3,
+          "flip_hi": 0.58
+        },
+        {
+          "lo": 0.98,
+          "hi": 1.0,
+          "n_pairs": 70,
+          "n_flips": 12,
+          "flip_rate": 0.17142857142857143,
+          "flip_lo": 0.08571428571428572,
+          "flip_hi": 0.2571428571428571
+        }
+      ]
+    }
+  }
+}

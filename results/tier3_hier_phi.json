@@ -1,0 +1,554 @@
+{
+  "schema_version": "tier3_hier_phi",
+  "cells": [
+    {
+      "model": "gemma4:31b",
+      "benchmark": "gpqa",
+      "prompt": "zero_shot",
+      "n_runs": 792,
+      "n_cases": 198,
+      "n_wrong": 424,
+      "K": 32,
+      "p": 0.4694602272727273,
+      "consensus_acc": 0.46464646464646464,
+      "C_options": 4.0,
+      "kappa_empirical": 5.2616124876865955,
+      "kappa_empirical_subset": 5.2616124876865955,
+      "kappa_iid_perq": 2.3537581901309643,
+      "kappa_rival_case": 5.263304791295614,
+      "kappa_rival_pool": 0.3690241692757333,
+      "mechanical_addon_case": 2.9095466011646494,
+      "shared_residual_case": -0.0016923036090181753,
+      "share_explained_mech": 1.000321632125699,
+      "share_explained_mech_ci": [
+        0.9815051042787537,
+        1.0199869880281518
+      ],
+      "kappa_empirical_ci": [
+        5.188679245283018,
+        5.331638819428657
+      ],
+      "kappa_rival_case_ci": [
+        5.191321847362926,
+        5.331666998558336
+      ],
+      "kappa_rival_pool_ci": [
+        0.3673375809393507,
+        0.37092056927778805
+      ],
+      "kappa_empirical_ci_clustered": [
+        5.117845107399631,
+        5.397215050033444
+      ],
+      "kappa_empirical_subset_ci_clustered": [
+        5.116952594555275,
+        5.394951330701494
+      ],
+      "kappa_rival_case_ci_clustered": [
+        5.1207483380174255,
+        5.397468569822215
+      ],
+      "share_explained_mech_ci_clustered": [
+        0.9990801770161278,
+        1.0015817033046324
+      ],
+      "share_explained_mech_ci_hierarchical": [
+        0.9997984442372607,
+        1.0009945263230888
+      ],
+      "mc_se_rival_case": 2.976926004485473e-05,
+      "mc_se_rival_pool": 0.00024397184403514668,
+      "n_test_runs": 424,
+      "n_test_with_draw": 424,
+      "n_test_cases": 107
+    },
+    {
+      "model": "gemma4:26b",
+      "benchmark": "gpqa",
+      "prompt": "zero_shot",
+      "n_runs": 792,
+      "n_cases": 198,
+      "n_wrong": 420,
+      "K": 32,
+      "p": 0.4616477272727273,
+      "consensus_acc": 0.4696969696969697,
+      "C_options": 4.0,
+      "kappa_empirical": 4.820015077271014,
+      "kappa_empirical_subset": 4.820015077271014,
+      "kappa_iid_perq": 2.2750247391996705,
+      "kappa_rival_case": 4.828082857119689,
+      "kappa_rival_pool": 0.36970246558176856,
+      "mechanical_addon_case": 2.5530581179200187,
+      "shared_residual_case": -0.008067779848675016,
+      "share_explained_mech": 1.0016738080108336,
+      "share_explained_mech_ci": [
+        0.9766105510560176,
+        1.0277219046658146
+      ],
+      "kappa_empirical_ci": [
+        4.7292122125895215,
+        4.908340557859027
+      ],
+      "kappa_rival_case_ci": [
+        4.7431453077051975,
+        4.913126557902526
+      ],
+      "kappa_rival_pool_ci": [
+        0.3660531463806567,
+        0.3740183196071328
+      ],
+      "kappa_empirical_ci_clustered": [
+        4.650825059025501,
+        4.9859107925317705
+      ],
+      "kappa_empirical_subset_ci_clustered": [
+        4.644769079691313,
+        4.980392426216214
+      ],
+      "kappa_rival_case_ci_clustered": [
+        4.662549517007951,
+        4.989728900401528
+      ],
+      "share_explained_mech_ci_clustered": [
+        0.9997846052558896,
+        1.003786045617814
+      ],
+      "share_explained_mech_ci_hierarchical": [
+        1.001043163976247,
+        1.0028786408820674
+      ],
+      "mc_se_rival_case": 4.529655478944682e-05,
+      "mc_se_rival_pool": 0.0007282068273728968,
+      "n_test_runs": 420,
+      "n_test_with_draw": 420,
+      "n_test_cases": 108
+    },
+    {
+      "model": "qwen3.5:122b",
+      "benchmark": "gpqa",
+      "prompt": "zero_shot",
+      "n_runs": 792,
+      "n_cases": 198,
+      "n_wrong": 402,
+      "K": 32,
+      "p": 0.4904119318181818,
+      "consensus_acc": 0.49242424242424243,
+      "C_options": 4.0,
+      "kappa_empirical": 3.900483644495294,
+      "kappa_empirical_subset": 3.900483644495294,
+      "kappa_iid_perq": 2.2721634157548523,
+      "kappa_rival_case": 3.920349560375119,
+      "kappa_rival_pool": 0.40447734140298913,
+      "mechanical_addon_case": 1.6481861446202668,
+      "shared_residual_case": -0.019865915879825113,
+      "share_explained_mech": 1.0050931929705338,
+      "share_explained_mech_ci": [
+        0.9653535257197933,
+        1.045294164190552
+      ],
+      "kappa_empirical_ci": [
+        3.7888189713453646,
+        4.008029538717563
+      ],
+      "kappa_rival_case_ci": [
+        3.8170455910396903,
+        4.025429523463055
+      ],
+      "kappa_rival_pool_ci": [
+        0.3996067321141799,
+        0.40981916287936376
+      ],
+      "kappa_empirical_ci_clustered": [
+        3.7001848537013164,
+        4.106342010865875
+      ],
+      "kappa_empirical_subset_ci_clustered": [
+        3.695556435819833,
+        4.104469973355197
+      ],
+      "kappa_rival_case_ci_clustered": [
+        3.718940192770841,
+        4.12513967772539
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.000786619478547,
+        1.0096866057296965
+      ],
+      "share_explained_mech_ci_hierarchical": [
+        1.0044269712646914,
+        1.0083546427099697
+      ],
+      "mc_se_rival_case": 6.759066267681835e-05,
+      "mc_se_rival_pool": 0.0008840762900389773,
+      "n_test_runs": 402,
+      "n_test_with_draw": 402,
+      "n_test_cases": 109
+    },
+    {
+      "model": "qwen3.5-9b-ctx4k",
+      "benchmark": "gpqa",
+      "prompt": "zero_shot",
+      "n_runs": 792,
+      "n_cases": 198,
+      "n_wrong": 470,
+      "K": 32,
+      "p": 0.3965435606060606,
+      "consensus_acc": 0.4065656565656566,
+      "C_options": 4.0,
+      "kappa_empirical": 3.338480672437251,
+      "kappa_empirical_subset": 3.338480672437251,
+      "kappa_iid_perq": 1.9248547514038397,
+      "kappa_rival_case": 3.354099299821442,
+      "kappa_rival_pool": 0.3324980512258633,
+      "mechanical_addon_case": 1.4292445484176024,
+      "shared_residual_case": -0.015618627384191175,
+      "share_explained_mech": 1.0046783638776584,
+      "share_explained_mech_ci": [
+        0.9698710487710336,
+        1.041939686054017
+      ],
+      "kappa_empirical_ci": [
+        3.252870128460889,
+        3.425743929617789
+      ],
+      "kappa_rival_case_ci": [
+        3.274820979165186,
+        3.4362437893935107
+      ],
+      "kappa_rival_pool_ci": [
+        0.3292573150728719,
+        0.33572633430943544
+      ],
+      "kappa_empirical_ci_clustered": [
+        3.1735419215728204,
+        3.497458268166314
+      ],
+      "kappa_empirical_subset_ci_clustered": [
+        3.1749408521217246,
+        3.4986490940446293
+      ],
+      "kappa_rival_case_ci_clustered": [
+        3.1950877852063684,
+        3.5066407365042256
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.0012102874129627,
+        1.0082163536089404
+      ],
+      "share_explained_mech_ci_hierarchical": [
+        1.0064278475871595,
+        1.009393470886288
+      ],
+      "mc_se_rival_case": 5.276672292107401e-05,
+      "mc_se_rival_pool": 0.0005259449514072211,
+      "n_test_runs": 470,
+      "n_test_with_draw": 470,
+      "n_test_cases": 130
+    },
+    {
+      "model": "qwen3.8:27b",
+      "benchmark": "gpqa",
+      "prompt": "zero_shot",
+      "n_runs": 906,
+      "n_cases": 198,
+      "n_wrong": 516,
+      "K": 32,
+      "p": 0.41135485651214126,
+      "consensus_acc": 0.4304635761589404,
+      "C_options": 4.0,
+      "kappa_empirical": 2.9670642566888055,
+      "kappa_empirical_subset": 2.978175700904014,
+      "kappa_iid_perq": 1.920255277217081,
+      "kappa_rival_case": 2.99706083999113,
+      "kappa_rival_pool": 0.35510497219442294,
+      "mechanical_addon_case": 1.076805562774049,
+      "shared_residual_case": -0.029996583302324353,
+      "share_explained_mech": 1.0063411769431143,
+      "share_explained_mech_ci": [
+        0.972441920989027,
+        1.0412091407173496
+      ],
+      "kappa_empirical_ci": [
+        2.8914447057797497,
+        3.0436097612824624
+      ],
+      "kappa_rival_case_ci": [
+        2.929356344288807,
+        3.0649872505262548
+      ],
+      "kappa_rival_pool_ci": [
+        0.3524851647900197,
+        0.35780762054373316
+      ],
+      "kappa_empirical_ci_clustered": [
+        2.8126546625580646,
+        3.123892066241963
+      ],
+      "kappa_empirical_subset_ci_clustered": [
+        2.8198225459875084,
+        3.1370829356002
+      ],
+      "kappa_rival_case_ci_clustered": [
+        2.8489928188961855,
+        3.1488073309444955
+      ],
+      "share_explained_mech_ci_clustered": [
+        0.9975501109814496,
+        1.0143504447931573
+      ],
+      "share_explained_mech_ci_hierarchical": [
+        1.0155831193177975,
+        1.0225321289895029
+      ],
+      "mc_se_rival_case": 5.5027196209294126e-05,
+      "mc_se_rival_pool": 0.00048209399154897564,
+      "n_test_runs": 516,
+      "n_test_with_draw": 516,
+      "n_test_cases": 123
+    },
+    {
+      "model": "gemma4:31b",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "n_runs": 800,
+      "n_cases": 200,
+      "n_wrong": 754,
+      "K": 32,
+      "p": 0.053515625,
+      "consensus_acc": 0.0575,
+      "C_options": 9.2125,
+      "kappa_empirical": 4.111504908201793,
+      "kappa_empirical_subset": 4.111504908201793,
+      "kappa_iid_perq": 1.859379428248011,
+      "kappa_rival_case": 4.162994078215352,
+      "kappa_rival_pool": 0.7815471777465702,
+      "mechanical_addon_case": 2.303614649967341,
+      "shared_residual_case": -0.051489170013558905,
+      "share_explained_mech": 1.0125231931283474,
+      "share_explained_mech_ci": [
+        0.9550059780511595,
+        1.0736905367177683
+      ],
+      "kappa_empirical_ci": [
+        3.9385199831193325,
+        4.285568685267513
+      ],
+      "kappa_rival_case_ci": [
+        3.993160346399705,
+        4.33410023991176
+      ],
+      "kappa_rival_pool_ci": [
+        0.7784367188711273,
+        0.7852003891020868
+      ],
+      "kappa_empirical_ci_clustered": [
+        3.765909639467811,
+        4.463542535629298
+      ],
+      "kappa_empirical_subset_ci_clustered": [
+        3.76257892073353,
+        4.468418073149128
+      ],
+      "kappa_rival_case_ci_clustered": [
+        3.817894631891682,
+        4.513976229364024
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.0083673666809136,
+        1.0172397707318461
+      ],
+      "share_explained_mech_ci_hierarchical": [
+        1.0110386962405367,
+        1.0153136247894883
+      ],
+      "mc_se_rival_case": 6.353094746354033e-05,
+      "mc_se_rival_pool": 8.029552935017008e-05,
+      "n_test_runs": 754,
+      "n_test_with_draw": 754,
+      "n_test_cases": 190
+    },
+    {
+      "model": "qwen3.5:122b",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "n_runs": 800,
+      "n_cases": 200,
+      "n_wrong": 590,
+      "K": 32,
+      "p": 0.221796875,
+      "consensus_acc": 0.2625,
+      "C_options": 15.57875,
+      "kappa_empirical": 4.6298834947821925,
+      "kappa_empirical_subset": 4.6298834947821925,
+      "kappa_iid_perq": 2.892734044079598,
+      "kappa_rival_case": 4.823565747430056,
+      "kappa_rival_pool": 1.1620575574399965,
+      "mechanical_addon_case": 1.9308317033504578,
+      "shared_residual_case": -0.19368225264786343,
+      "share_explained_mech": 1.041833072660714,
+      "share_explained_mech_ci": [
+        0.9492099314812042,
+        1.1398967083254683
+      ],
+      "kappa_empirical_ci": [
+        4.320298486129804,
+        4.94839884022263
+      ],
+      "kappa_rival_case_ci": [
+        4.531445390533576,
+        5.108361185742202
+      ],
+      "kappa_rival_pool_ci": [
+        1.1569908881367283,
+        1.1676017811829762
+      ],
+      "kappa_empirical_ci_clustered": [
+        4.0452384243607815,
+        5.241457864243499
+      ],
+      "kappa_empirical_subset_ci_clustered": [
+        4.059654532891341,
+        5.24625322460332
+      ],
+      "kappa_rival_case_ci_clustered": [
+        4.255532741140347,
+        5.4334665800143505
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.0315998059179887,
+        1.054499485443882
+      ],
+      "share_explained_mech_ci_hierarchical": [
+        1.0367858020038974,
+        1.0490510589594186
+      ],
+      "mc_se_rival_case": 0.00013969307038046126,
+      "mc_se_rival_pool": 0.00022845709422209548,
+      "n_test_runs": 590,
+      "n_test_with_draw": 590,
+      "n_test_cases": 151
+    },
+    {
+      "model": "gemma4:26b",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "n_runs": 800,
+      "n_cases": 200,
+      "n_wrong": 774,
+      "K": 32,
+      "p": 0.0334765625,
+      "consensus_acc": 0.0325,
+      "C_options": 11.77375,
+      "kappa_empirical": 4.683700534518102,
+      "kappa_empirical_subset": 4.683700534518102,
+      "kappa_iid_perq": 1.9974646611787557,
+      "kappa_rival_case": 4.767703936074712,
+      "kappa_rival_pool": 0.8648078615080331,
+      "mechanical_addon_case": 2.7702392748959563,
+      "shared_residual_case": -0.08400340155661024,
+      "share_explained_mech": 1.0179352631402283,
+      "share_explained_mech_ci": [
+        0.9499645746887682,
+        1.0902507883784576
+      ],
+      "kappa_empirical_ci": [
+        4.448311616283613,
+        4.919078201430081
+      ],
+      "kappa_rival_case_ci": [
+        4.542865818512857,
+        4.985938127992239
+      ],
+      "kappa_rival_pool_ci": [
+        0.861343968042479,
+        0.8687885229392585
+      ],
+      "kappa_empirical_ci_clustered": [
+        4.233519598902955,
+        5.1476124249271145
+      ],
+      "kappa_empirical_subset_ci_clustered": [
+        4.234996021638072,
+        5.142455932458245
+      ],
+      "kappa_rival_case_ci_clustered": [
+        4.329012335228674,
+        5.228389597362587
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.013422747105039,
+        1.0231427937227755
+      ],
+      "share_explained_mech_ci_hierarchical": [
+        1.0155061458004675,
+        1.0204114119414436
+      ],
+      "mc_se_rival_case": 7.652269892213415e-05,
+      "mc_se_rival_pool": 5.0974015260716305e-05,
+      "n_test_runs": 774,
+      "n_test_with_draw": 774,
+      "n_test_cases": 195
+    },
+    {
+      "model": "qwen3.5:9b",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "n_runs": 800,
+      "n_cases": 200,
+      "n_wrong": 785,
+      "K": 32,
+      "p": 0.0126953125,
+      "consensus_acc": 0.01875,
+      "C_options": 20.01875,
+      "kappa_empirical": 3.9630873134375375,
+      "kappa_empirical_subset": 3.9630873134375375,
+      "kappa_iid_perq": 2.6674527176940566,
+      "kappa_rival_case": 4.187933399123101,
+      "kappa_rival_pool": 1.4717034452399078,
+      "mechanical_addon_case": 1.5204806814290444,
+      "shared_residual_case": -0.2248460856855634,
+      "share_explained_mech": 1.0567350825007522,
+      "share_explained_mech_ci": [
+        0.9805676643969784,
+        1.1394116526144313
+      ],
+      "kappa_empirical_ci": [
+        3.740700447938914,
+        4.1931426915395615
+      ],
+      "kappa_rival_case_ci": [
+        3.9819783025901927,
+        4.396087125315027
+      ],
+      "kappa_rival_pool_ci": [
+        1.468915480219187,
+        1.4748996490987425
+      ],
+      "kappa_empirical_ci_clustered": [
+        3.544465925756015,
+        4.406608493860727
+      ],
+      "kappa_empirical_subset_ci_clustered": [
+        3.5537368489185663,
+        4.411481879981777
+      ],
+      "kappa_rival_case_ci_clustered": [
+        3.775526881955411,
+        4.628225109401574
+      ],
+      "share_explained_mech_ci_clustered": [
+        1.0457037796135602,
+        1.0699127383231553
+      ],
+      "share_explained_mech_ci_hierarchical": [
+        1.050626830036054,
+        1.0625071467739877
+      ],
+      "mc_se_rival_case": 0.00011354743924749615,
+      "mc_se_rival_pool": 0.00012505354672711312,
+      "n_test_runs": 785,
+      "n_test_with_draw": 785,
+      "n_test_cases": 197
+    }
+  ]
+}

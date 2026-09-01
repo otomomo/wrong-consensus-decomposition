@@ -1,0 +1,476 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "finite_donor_mc.py",
+  "args": {
+    "tier3": [
+      "data/sampled/tier3/tier3_gemma4:26b_aime.jsonl",
+      "data/sampled/tier3/tier3_gemma4:26b_gpqa.jsonl",
+      "data/sampled/tier3/tier3_gemma4:31b_aime.jsonl",
+      "data/sampled/tier3/tier3_gemma4:31b_gpqa.jsonl",
+      "data/sampled/tier3/tier3_qwen3.5:122b_aime.jsonl",
+      "data/sampled/tier3/tier3_qwen3.5:122b_gpqa.jsonl",
+      "data/sampled/tier3/tier3_qwen3.5:9b_aime.jsonl",
+      "data/sampled/tier3/tier3_qwen3.5-9b-ctx4k_gpqa.jsonl",
+      "data/sampled/tier3/tier3_qwen3.8:27b_aime.jsonl",
+      "data/sampled/tier3/tier3_qwen3.8:27b_gpqa.jsonl"
+    ],
+    "include_ding": true,
+    "ding_cases": "data/raw/case_results_deid.parquet",
+    "ding_dist": "data/raw/answer_distributions_deid.parquet",
+    "ding_model": "gpt-4.1",
+    "output": "results/finite_donor_mc.json",
+    "reps": 300,
+    "n_sim_cal": 8000,
+    "seed": 0,
+    "workers": 56,
+    "obs_tier3_json": "results/tier3_kappa.json",
+    "obs_ding_json": "results/kappa_rival_preference.json"
+  },
+  "note": "phi = kappa_rival/kappa_emp (the (1-p)/(c-1) denom cancels) under an i.i.d. generative null per case. p_ref/q_ref are estimated from ALL observed votes of each case (best estimate of the i.i.d. null that generated the data). Per replication, n_obs_runs synthetic runs are drawn from the null and the SAME leave-one-out pipeline as kappa_rival_preference.py is run on them. TWO phi are reported per replication on the same synthetic test runs:   phi_finite = mean(E_alpha|wrong with leave-one-out q_hat,p_lopo) /                mean(alpha_emp)  -> mirrors the paper's estimator;   phi_oracle = mean(E_alpha|wrong with the TRUE p_ref,q_ref) /                mean(alpha_emp)  -> unbiased (phi_true=1), isolates the                inner-MC + finite-test noise. finite_minus_oracle_bias = phi_finite - phi_oracle is the finite-donor plug-in bias. MECHANISM: estimating q_hat from a few donor runs makes it MORE concentrated than the true q (E||q_hat||^2 > ||q||^2, a multinomial/Jensen effect); a more concentrated q makes wrong voters agree more on the same wrong option, raising the simulated E[alpha|wrong] and hence inflating phi above 1. If phi_oracle ~ 1 and phi_finite ~ 1+bias with the observed phi landing in the phi_finite band, the observed overshoot is the finite-donor plug-in bias, not a real effect. Scope: quantifies plug-in bias under the i.i.d. null only; does NOT model inter-voter correlation (a real shared-bias mechanism, which pushes phi BELOW 1 and is a signal, not noise).",
+  "cells": {
+    "gemma4-26b|aime|zero_shot": {
+      "n_cases_calibrated": 196,
+      "observed_phi": 1.0182582292949944,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0171336610929098,
+        "median": 1.0171332186854478,
+        "sd": 0.0018202343607020938,
+        "p05": 1.0141018559378832,
+        "p95": 1.0200400079380427,
+        "p99": 1.0212759074693043,
+        "P_gt_1": 1.0
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 0.9998344055075606,
+        "median": 0.9998061064493668,
+        "sd": 0.004946154917927103,
+        "p05": 0.9920379563073219,
+        "p95": 1.0077943037025971,
+        "p99": 1.0117854841723009,
+        "P_gt_1": 0.48
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.017299255585348904,
+        "median": 0.017202505709713656,
+        "sd": 0.004463328346515121,
+        "p05": 0.010168513356200948,
+        "p95": 0.025150511262255714,
+        "p99": 0.0264312099553864,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": true,
+      "observed_within_finite_band": true
+    },
+    "gemma4-26b|gpqa_diamond|zero_shot": {
+      "n_cases_calibrated": 142,
+      "observed_phi": 1.0015787172797197,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.001027156348877,
+        "median": 1.0011179108905153,
+        "sd": 0.0008495822240240672,
+        "p05": 0.9994865213100572,
+        "p95": 1.0022713124157225,
+        "p99": 1.0027729891487136,
+        "P_gt_1": 0.8766666666666667
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 0.9998021679912987,
+        "median": 0.9998956461412467,
+        "sd": 0.002833320214101704,
+        "p05": 0.9952666903266716,
+        "p95": 1.0047316806821611,
+        "p99": 1.0062446444403839,
+        "P_gt_1": 0.4866666666666667
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.0012249883575784263,
+        "median": 0.0012071523689646257,
+        "sd": 0.0025977212899455674,
+        "p05": -0.0033533085585100817,
+        "p95": 0.005118705399955211,
+        "p99": 0.006473227394608032,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": true,
+      "observed_within_finite_band": true
+    },
+    "gemma4-31b|aime|zero_shot": {
+      "n_cases_calibrated": 196,
+      "observed_phi": 1.0129218406350926,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0121975803247787,
+        "median": 1.012243631878058,
+        "sd": 0.001716567714255877,
+        "p05": 1.0094076902309668,
+        "p95": 1.0149054946445026,
+        "p99": 1.0165023744426,
+        "P_gt_1": 1.0
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 1.000476324212679,
+        "median": 1.0004099060887852,
+        "sd": 0.004765701065776429,
+        "p05": 0.9932430575515251,
+        "p95": 1.009248415945299,
+        "p99": 1.0117863287838653,
+        "P_gt_1": 0.5266666666666666
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.011721256112099525,
+        "median": 0.011955568458976495,
+        "sd": 0.004346788688230585,
+        "p05": 0.004237661051196629,
+        "p95": 0.018385231589890406,
+        "p99": 0.020677711139470818,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": true,
+      "observed_within_finite_band": true
+    },
+    "gemma4-31b|gpqa_diamond|zero_shot": {
+      "n_cases_calibrated": 115,
+      "observed_phi": 1.0008097256580013,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0007624132646469,
+        "median": 1.000797793047497,
+        "sd": 0.0006609575700841312,
+        "p05": 0.9996501848067647,
+        "p95": 1.0017574070223436,
+        "p99": 1.0023000906263708,
+        "P_gt_1": 0.8733333333333333
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 0.9998766384176468,
+        "median": 0.9998681581764288,
+        "sd": 0.0018021677678473004,
+        "p05": 0.9969538566719789,
+        "p95": 1.0027206757839717,
+        "p99": 1.004077329062879,
+        "P_gt_1": 0.47333333333333333
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.0008857748469999479,
+        "median": 0.0008970769809559243,
+        "sd": 0.0016253016751246276,
+        "p05": -0.0016450073032901913,
+        "p95": 0.0036649278121750396,
+        "p99": 0.004369861702509732,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": true,
+      "observed_within_finite_band": true
+    },
+    "qwen3.5-122b|aime|zero_shot": {
+      "n_cases_calibrated": 185,
+      "observed_phi": 1.0413576492714436,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0391796531245818,
+        "median": 1.0391930449699749,
+        "sd": 0.0034790826001225962,
+        "p05": 1.033159498892748,
+        "p95": 1.044947581780276,
+        "p99": 1.0461455492081766,
+        "P_gt_1": 1.0
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 0.9996900304237613,
+        "median": 0.9994182288074909,
+        "sd": 0.008902866579013414,
+        "p05": 0.9850155637401267,
+        "p95": 1.0145225502147666,
+        "p99": 1.0212234554719233,
+        "P_gt_1": 0.48
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.03948962270082057,
+        "median": 0.038923307551527175,
+        "sd": 0.007651150119138764,
+        "p05": 0.0266417194416644,
+        "p95": 0.05292984095606352,
+        "p99": 0.056991913475051365,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": true,
+      "observed_within_finite_band": true
+    },
+    "qwen3.5-122b|gpqa_diamond|zero_shot": {
+      "n_cases_calibrated": 167,
+      "observed_phi": 1.004211162643419,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0044330345794696,
+        "median": 1.0044659468696413,
+        "sd": 0.0020141462814480325,
+        "p05": 1.001164149658511,
+        "p95": 1.0076479127518558,
+        "p99": 1.0089812643922391,
+        "P_gt_1": 0.9866666666666667
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 0.9998331793244776,
+        "median": 0.9992093095522783,
+        "sd": 0.0053499435116756795,
+        "p05": 0.9911760055976891,
+        "p95": 1.0091113142342134,
+        "p99": 1.0142423193930685,
+        "P_gt_1": 0.43666666666666665
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.004599855254992138,
+        "median": 0.004748940057066997,
+        "sd": 0.004862549744218942,
+        "p05": -0.0027450222668911834,
+        "p95": 0.012465144541269416,
+        "p99": 0.015995201168912846,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": true,
+      "observed_within_finite_band": true
+    },
+    "qwen3.5-9b|aime|zero_shot": {
+      "n_cases_calibrated": 200,
+      "observed_phi": 1.0561309641796346,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0538523056441904,
+        "median": 1.053775669699531,
+        "sd": 0.0035814624612270163,
+        "p05": 1.0483620427207467,
+        "p95": 1.0599635950496773,
+        "p99": 1.062125408339188,
+        "P_gt_1": 1.0
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 1.0006718504002552,
+        "median": 0.9999179240362726,
+        "sd": 0.008335222574661794,
+        "p05": 0.9866998765864207,
+        "p95": 1.0139270140711476,
+        "p99": 1.0200743843435593,
+        "P_gt_1": 0.49666666666666665
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.05318045524393515,
+        "median": 0.05329457781292518,
+        "sd": 0.006865121353357322,
+        "p05": 0.0422917127487612,
+        "p95": 0.0649719468577789,
+        "p99": 0.06870195208764257,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": true,
+      "observed_within_finite_band": true
+    },
+    "qwen3.5-9b-ctx4k|gpqa_diamond|zero_shot": {
+      "n_cases_calibrated": 183,
+      "observed_phi": 1.0033726422449996,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0040490198930692,
+        "median": 1.0040607253015457,
+        "sd": 0.00163581352361076,
+        "p05": 1.0014778538381073,
+        "p95": 1.0068505561444285,
+        "p99": 1.007733972039823,
+        "P_gt_1": 0.9933333333333333
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 1.0002652191980592,
+        "median": 0.9999633578685414,
+        "sd": 0.005053976003948876,
+        "p05": 0.9923945295395573,
+        "p95": 1.0091702845322235,
+        "p99": 1.0130444448430098,
+        "P_gt_1": 0.49666666666666665
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.0037838006950102992,
+        "median": 0.0035892149191797396,
+        "sd": 0.004504276290191101,
+        "p05": -0.003543683239094586,
+        "p95": 0.010547300998286716,
+        "p99": 0.013267107831234798,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": true,
+      "observed_within_finite_band": true
+    },
+    "qwen3.8-27b|aime|zero_shot": {
+      "n_cases_calibrated": 199,
+      "observed_phi": 1.0521930960031651,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0438208156812785,
+        "median": 1.0438053827500147,
+        "sd": 0.00330556890356152,
+        "p05": 1.0384534453384169,
+        "p95": 1.049256776688001,
+        "p99": 1.0512914064277779,
+        "P_gt_1": 1.0
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 1.0001014635224568,
+        "median": 1.0001129093746188,
+        "sd": 0.00830246554390767,
+        "p05": 0.9872969927224102,
+        "p95": 1.0129661618424524,
+        "p99": 1.0187402660458456,
+        "P_gt_1": 0.5066666666666667
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.04371935215882206,
+        "median": 0.04375043043782201,
+        "sd": 0.006976417524459323,
+        "p05": 0.03234990274188717,
+        "p95": 0.05466777579888148,
+        "p99": 0.05837419761641457,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": true,
+      "observed_within_finite_band": false
+    },
+    "qwen3.8-27b|gpqa_diamond|zero_shot": {
+      "n_cases_calibrated": 181,
+      "observed_phi": 1.0113205182106892,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0053467096388844,
+        "median": 1.0053563600345927,
+        "sd": 0.0020735186360118173,
+        "p05": 1.002226697803508,
+        "p95": 1.0089160819565488,
+        "p99": 1.0101368236700121,
+        "P_gt_1": 0.9966666666666667
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 1.0001180374385321,
+        "median": 1.000402545482369,
+        "sd": 0.005565263228614137,
+        "p05": 0.9917380402369604,
+        "p95": 1.008487818796284,
+        "p99": 1.0129642617518677,
+        "P_gt_1": 0.53
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.005228672200352146,
+        "median": 0.004953509010925561,
+        "sd": 0.005225011619258238,
+        "p05": -0.003034305462698361,
+        "p95": 0.01356715946260484,
+        "p99": 0.017491492590714926,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": true,
+      "observed_within_finite_band": false
+    },
+    "gpt-4.1|gpqa_diamond|zero_shot": {
+      "n_cases_calibrated": 104,
+      "observed_phi": 0.9149150931629724,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0030843436080379,
+        "median": 1.0031402086397543,
+        "sd": 0.0015997759347312777,
+        "p05": 1.0003281330242053,
+        "p95": 1.0056567532487966,
+        "p99": 1.0064356088880217,
+        "P_gt_1": 0.9766666666666667
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 1.0001484729636083,
+        "median": 1.0004434239578077,
+        "sd": 0.004484494084123478,
+        "p05": 0.992455231386178,
+        "p95": 1.0074680600304948,
+        "p99": 1.0096249483976534,
+        "P_gt_1": 0.5366666666666666
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.002935870644429434,
+        "median": 0.002642551881937072,
+        "sd": 0.0040676006601954705,
+        "p05": -0.0033211983229048613,
+        "p95": 0.009166736048301904,
+        "p99": 0.01194653586359521,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": false,
+      "observed_within_finite_band": false
+    },
+    "gpt-4.1|aime|zero_shot": {
+      "n_cases_calibrated": 129,
+      "observed_phi": 0.6867541531155129,
+      "phi_finite": {
+        "n": 300,
+        "mean": 1.0264732923671647,
+        "median": 1.0265883108220397,
+        "sd": 0.004073451326584294,
+        "p05": 1.0195162392771946,
+        "p95": 1.033182363905311,
+        "p99": 1.0354524612257723,
+        "P_gt_1": 1.0
+      },
+      "phi_oracle": {
+        "n": 300,
+        "mean": 1.0001201567671532,
+        "median": 0.9997612027429015,
+        "sd": 0.009441398707956171,
+        "p05": 0.9855030830823165,
+        "p95": 1.017118105770034,
+        "p99": 1.0227123604296346,
+        "P_gt_1": 0.49
+      },
+      "finite_minus_oracle_bias": {
+        "n": 300,
+        "mean": 0.026353135600011637,
+        "median": 0.026058396598252265,
+        "sd": 0.007929927075361859,
+        "p05": 0.013222929972013787,
+        "p95": 0.03958925348810259,
+        "p99": 0.042944016232763366,
+        "P_gt_1": 0.0
+      },
+      "observed_explained_by_finite_bias": "False",
+      "observed_within_oracle_plus_bias_band": false,
+      "observed_within_finite_band": false
+    }
+  }
+}

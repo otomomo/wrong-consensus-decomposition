@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "kappa_support_audit.py",
+  "args": {
+    "input_cases": "data/raw/case_results_deid.parquet",
+    "input_dist": "data/raw/answer_distributions_deid.parquet",
+    "output": "results/kappa_support_audit.json"
+  },
+  "note": "C = mean per-RUN distinct-answer count (cell scalar used by the uniform null). rival_support_* = size of the per-case wrong-label support after subtracting the test run's counts and dropping gt and _UNPARSEABLE_ (the option set the rival null draws from). p_test = test run's own accuracy (old convention); p_lopo = leave-one-out case accuracy (new convention).",
+  "cells": [
+    {
+      "model": "gpt-4.1",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "C_mean_per_run_distinct": 13.977777777777778,
+      "rival_support_mean": 30.66268656716418,
+      "rival_support_median": 24.0,
+      "rival_support_max": 121.0,
+      "n_test_runs": 335,
+      "p_test_mean": 0.014925373134328358,
+      "p_lopo_mean": 0.09824826567164179
+    },
+    {
+      "model": "gpt-4.1",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "C_mean_per_run_distinct": 2.74,
+      "rival_support_mean": 1.7246376811594204,
+      "rival_support_median": 2.0,
+      "rival_support_max": 3.0,
+      "n_test_runs": 207,
+      "p_test_mean": 0.06628019323671498,
+      "p_lopo_mean": 0.18529186151368762
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "benchmark": "aime",
+      "prompt": "chain_of_thought",
+      "C_mean_per_run_distinct": 9.00235294117647,
+      "rival_support_mean": 19.462264150943398,
+      "rival_support_median": 17.0,
+      "rival_support_max": 76.0,
+      "n_test_runs": 212,
+      "p_test_mean": 0.02858490566037736,
+      "p_lopo_mean": 0.280986070754717
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "C_mean_per_run_distinct": 13.881509433962265,
+      "rival_support_mean": 69.42857142857143,
+      "rival_support_median": 57.0,
+      "rival_support_max": 250.0,
+      "n_test_runs": 917,
+      "p_test_mean": 0.01925845147219193,
+      "p_lopo_mean": 0.2191192319140934
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "benchmark": "gpqa_diamond",
+      "prompt": "chain_of_thought",
+      "C_mean_per_run_distinct": 2.5764705882352943,
+      "rival_support_mean": 2.221518987341772,
+      "rival_support_median": 3.0,
+      "rival_support_max": 3.0,
+      "n_test_runs": 158,
+      "p_test_mean": 0.130379746835443,
+      "p_lopo_mean": 0.322362970464135
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "C_mean_per_run_distinct": 2.6739622641509433,
+      "rival_support_mean": 2.5959438377535102,
+      "rival_support_median": 3.0,
+      "rival_support_max": 3.0,
+      "n_test_runs": 641,
+      "p_test_mean": 0.09219968798751949,
+      "p_lopo_mean": 0.2633254340507819
+    },
+    {
+      "model": "gpt-4.1-nano",
+      "benchmark": "aime",
+      "prompt": "zero_shot",
+      "C_mean_per_run_distinct": 20.09111111111111,
+      "rival_support_mean": 42.46325878594249,
+      "rival_support_median": 36.0,
+      "rival_support_max": 148.0,
+      "n_test_runs": 313,
+      "p_test_mean": 0.015207667731629392,
+      "p_lopo_mean": 0.13088865814696485
+    },
+    {
+      "model": "gpt-4.1-nano",
+      "benchmark": "gpqa_diamond",
+      "prompt": "zero_shot",
+      "C_mean_per_run_distinct": 3.1533333333333333,
+      "rival_support_mean": 2.459349593495935,
+      "rival_support_median": 3.0,
+      "rival_support_max": 3.0,
+      "n_test_runs": 246,
+      "p_test_mean": 0.09682926829268293,
+      "p_lopo_mean": 0.2605258306233062
+    }
+  ]
+}

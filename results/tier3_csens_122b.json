@@ -1,0 +1,21 @@
+{
+  "generated_by": "tier3_csens_122b.py",
+  "note": "C-sensitivity of the pivotal 122b-aime cell: c_fixed=9 and c_fixed=20 vs mean_distinct; n_sim=2e3 (matching the Ding csens evidence); phi is C-invariant by construction, this verifies it on the corrected cell",
+  "cells": {
+    "c_fixed_9": {
+      "phi": 1.041210217516413,
+      "kappa_emp": 2.5497737599123806,
+      "kappa_rival": 2.654850491176012
+    },
+    "c_fixed_20": {
+      "phi": 1.041210217516413,
+      "kappa_emp": 6.055712679791903,
+      "kappa_rival": 6.305269916543028
+    },
+    "mean_distinct": {
+      "phi": 1.0412102175164129,
+      "kappa_emp": 4.646564275290327,
+      "kappa_rival": 4.838050199779035
+    }
+  }
+}

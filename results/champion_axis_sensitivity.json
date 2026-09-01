@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "champion_axis_sensitivity.py",
+  "args": {
+    "input": "data/raw/case_results_deid.parquet",
+    "output": "results/champion_axis_sensitivity.json"
+  },
+  "note": "gpt-4.1-mini ZS only; pairs the case's first B/a run against its first A/b run (C/a arm dropped); cases without a B/a run are excluded.",
+  "cells": {
+    "aime": {
+      "n_pairs": 155,
+      "n_flips": 124,
+      "flip_rate": 0.8
+    },
+    "gpqa_diamond": {
+      "n_pairs": 160,
+      "n_flips": 66,
+      "flip_rate": 0.4125
+    }
+  }
+}
